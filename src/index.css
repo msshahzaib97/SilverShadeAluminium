@@ -1,86 +1,162 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --bg-main: #f8faf9;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card-hover: #ffffff;
+    --border-color: rgba(6, 78, 59, 0.12);
+    --border-highlight: rgba(16, 185, 129, 0.4);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --accent-emerald: #059669;
+    --accent-emerald-light: #10b981;
+  }
+
+  html.dark {
+    --bg-main: #060a08;
+    --bg-card: rgba(16, 24, 20, 0.7);
+    --bg-card-hover: rgba(20, 32, 26, 0.85);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-highlight: rgba(52, 211, 153, 0.4);
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-emerald: #10b981;
+    --accent-emerald-light: #34d399;
+  }
+
   html {
     scroll-behavior: smooth;
     font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #0a0a0a;
-    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
   }
 }
 
-/* Frosted Glass Theme Utilities */
+/* Frosted Glass Theme Utilities (Dark & Light Adaptive) */
 .frosted-glass {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.08), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(6, 78, 59, 0.08);
+}
+
+.dark .frosted-glass {
+  background: rgba(10, 18, 14, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.08), 0 20px 40px -15px rgba(0, 0, 0, 0.6);
 }
 
 .frosted-glass-hover:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 32px -8px rgba(16, 185, 129, 0.15);
+}
+
+.dark .frosted-glass-hover:hover {
+  background: rgba(18, 30, 24, 0.8);
+  border-color: rgba(52, 211, 153, 0.35);
+  box-shadow: 0 12px 32px -8px rgba(16, 185, 129, 0.2);
 }
 
 .frosted-glass-deep {
-  background: rgba(10, 10, 10, 0.75);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+}
+
+.dark .frosted-glass-deep {
+  background: rgba(8, 14, 11, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.8);
 }
 
 .frosted-glass-header {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.12);
 }
 
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
+.dark .frosted-glass-header {
+  background: rgba(6, 10, 8, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+.emerald-shimmer {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.metallic-border {
-  border-image: linear-gradient(to right, rgba(255,255,255,0.2), rgba(200,205,215,0.6), rgba(255,255,255,0.1)) 1;
+.dark .emerald-shimmer {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #6ee7b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-emerald-shimmer {
+  background: linear-gradient(135deg, #10b981 0%, #059669 35%, #0f172a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .silver-emerald-shimmer {
+  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 40%, #34d399 80%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .silver-shimmer {
+  background: linear-gradient(135deg, #0f172a 0%, #059669 60%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .silver-shimmer {
   background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #94a3b8 70%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.champagne-shimmer {
-  background: linear-gradient(135deg, #fef08a 0%, #e2d4b7 30%, #c5a880 70%, #dfc299 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Subtle architectural grid pattern */
+/* Grid & Radial Architectural Patterns */
 .bg-grid-pattern {
   background-size: 60px 60px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(16, 185, 129, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.06) 1px, transparent 1px);
 }
 
-.bg-radial-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(200, 210, 225, 0.06) 0%, transparent 70%);
+.dark .bg-grid-pattern {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(52, 211, 153, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(52, 211, 153, 0.04) 1px, transparent 1px);
 }
 
-/* Hide scrollbars when needed */
+.bg-emerald-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 65%);
+}
+
+.dark .bg-emerald-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.12) 0%, transparent 65%);
+}
+
+/* Hide scrollbars */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -88,3 +164,4 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+

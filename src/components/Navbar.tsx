@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowUpRight, MessageCircle, Phone } from 'lucide-react';
+import { Menu, X, ArrowUpRight, MessageCircle, Sun, Moon } from 'lucide-react';
 import { COMPANY_CONFIG } from '../data/content';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onOpenQuoteModal: (service?: string) => void;
@@ -10,6 +11,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,51 +52,66 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
         id="main-header"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
           isScrolled
-            ? 'bg-[#0a0a0a]/85 border-b border-white/10 py-4 shadow-2xl'
-            : 'bg-white/5 border-b border-white/10 py-5'
+            ? 'bg-white/90 dark:bg-[#060a08]/90 border-b border-emerald-900/10 dark:border-emerald-500/15 py-3.5 shadow-lg shadow-emerald-950/5'
+            : 'bg-white/60 dark:bg-black/40 border-b border-emerald-900/10 dark:border-white/10 py-4 sm:py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
             id="brand-logo-link"
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-9 h-9 border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center relative overflow-hidden group-hover:border-white/50 group-hover:bg-white/10 transition-all">
-              <span className="text-xs font-bold tracking-widest text-white">S</span>
+            <div className="w-9 h-9 border border-emerald-600/30 dark:border-emerald-400/30 bg-emerald-50/80 dark:bg-emerald-950/40 backdrop-blur-md flex items-center justify-center relative overflow-hidden group-hover:border-emerald-500 group-hover:bg-emerald-500/10 transition-all shadow-sm">
+              <span className="text-xs font-bold tracking-widest text-emerald-700 dark:text-emerald-300">S</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-bold tracking-tighter text-white group-hover:text-slate-200 transition-colors">
+              <span className="text-lg sm:text-2xl font-bold tracking-tighter text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 SILVER SHADE
               </span>
-              <span className="text-[10px] tracking-[0.4em] text-gray-400 uppercase -mt-1 font-medium">
-                Aluminium
+              <span className="text-[9px] sm:text-[10px] tracking-[0.35em] text-emerald-700 dark:text-emerald-400 uppercase -mt-1 font-semibold">
+                Aluminium &amp; Glass
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-[11px] font-medium uppercase tracking-widest text-gray-300">
+          <nav className="hidden lg:flex items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-300">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 id={`nav-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
                 onClick={() => handleNavClick(link.href)}
-                className="hover:text-white transition-colors cursor-pointer py-1 relative hover:opacity-100 opacity-80"
+                className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer py-1 relative hover:opacity-100"
               >
                 {link.name}
               </button>
             ))}
           </nav>
 
-          {/* Right CTAs */}
-          <div className="hidden sm:flex items-center gap-6">
-            {/* Free Quote CTA - Frosted Glass Button */}
+          {/* Right CTAs: Theme Toggle, Quote Button, WhatsApp */}
+          <div className="hidden sm:flex items-center gap-4">
+            {/* Dark/Light Mode Switcher */}
+            <button
+              id="theme-toggle-btn"
+              onClick={toggleTheme}
+              title={theme === 'dark' ? 'Switch to Modern Light Mode' : 'Switch to Dark Mode'}
+              aria-label="Toggle light or dark theme"
+              className="p-2.5 rounded-full border border-emerald-900/15 dark:border-white/20 bg-emerald-50/80 dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-500/50 transition-all cursor-pointer shadow-sm"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-amber-300 animate-spin-slow" />
+              ) : (
+                <Moon className="w-4 h-4 text-emerald-800" />
+              )}
+            </button>
+
+            {/* Free Quote CTA */}
             <button
               id="header-quote-cta"
               onClick={() => onOpenQuoteModal()}
-              className="bg-transparent border border-white/20 px-6 py-2.5 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all cursor-pointer backdrop-blur-sm"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white dark:bg-emerald-500/20 dark:hover:bg-emerald-500/30 dark:text-emerald-200 border border-emerald-600 dark:border-emerald-400/40 px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all cursor-pointer backdrop-blur-sm shadow-md shadow-emerald-600/15"
             >
               Get a Free Quote
             </button>
@@ -104,14 +121,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               id="header-whatsapp-btn"
               onClick={handleWhatsAppClick}
               title="Chat on WhatsApp"
-              className="w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center cursor-pointer shadow-lg shadow-emerald-950/40 border border-emerald-400/30 transition-all hover:scale-105 active:scale-95 text-white"
+              className="w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center cursor-pointer shadow-md shadow-emerald-700/20 border border-emerald-400/40 transition-all hover:scale-105 active:scale-95 text-white"
             >
               <MessageCircle className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex sm:hidden items-center gap-3">
+          {/* Mobile Actions (Theme Toggle & Menu Toggle) */}
+          <div className="flex sm:hidden items-center gap-2.5">
+            <button
+              id="mobile-theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 rounded-full border border-emerald-900/15 dark:border-white/20 bg-emerald-50/80 dark:bg-white/5 text-slate-700 dark:text-slate-200"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-amber-300" />
+              ) : (
+                <Moon className="w-4 h-4 text-emerald-800" />
+              )}
+            </button>
             <button
               id="mobile-whatsapp-btn"
               onClick={handleWhatsAppClick}
@@ -123,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 border border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition-colors"
+              className="p-2 border border-emerald-900/15 dark:border-white/20 bg-white/60 dark:bg-white/5 backdrop-blur-md text-slate-800 dark:text-white hover:bg-emerald-50 dark:hover:bg-white/10 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -141,10 +170,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-[68px] z-40 bg-[#0a0a0a]/95 backdrop-blur-2xl border-t border-white/10 p-6 flex flex-col justify-between overflow-y-auto lg:hidden"
+            className="fixed inset-0 top-[64px] z-40 bg-white/95 dark:bg-[#060a08]/95 backdrop-blur-2xl border-t border-emerald-900/10 dark:border-white/10 p-6 flex flex-col justify-between overflow-y-auto lg:hidden"
           >
             <div className="space-y-4 pt-4">
-              <div className="text-[10px] tracking-[0.4em] text-gray-500 uppercase pb-2 border-b border-white/10">
+              <div className="text-[10px] tracking-[0.4em] text-emerald-700 dark:text-emerald-400 uppercase pb-2 border-b border-emerald-900/10 dark:border-white/10 font-bold">
                 Navigation
               </div>
               <div className="flex flex-col space-y-3">
@@ -153,23 +182,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
                     key={link.name}
                     id={`mobile-nav-${link.name.toLowerCase()}`}
                     onClick={() => handleNavClick(link.href)}
-                    className="text-left text-lg font-light tracking-widest text-gray-300 hover:text-white py-2 border-b border-white/5 transition-colors flex items-center justify-between uppercase"
+                    className="text-left text-base font-medium tracking-wider text-slate-800 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 py-2 border-b border-emerald-900/5 dark:border-white/5 transition-colors flex items-center justify-between uppercase"
                   >
                     <span>{link.name}</span>
-                    <ArrowUpRight className="w-4 h-4 text-gray-500" />
+                    <ArrowUpRight className="w-4 h-4 text-emerald-600/60 dark:text-gray-500" />
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="space-y-4 pt-8 pb-6 border-t border-white/10">
+            <div className="space-y-3 pt-6 pb-6 border-t border-emerald-900/10 dark:border-white/10">
               <button
                 id="mobile-quote-cta"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenQuoteModal();
                 }}
-                className="w-full py-3.5 bg-white text-black text-center text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2"
+                className="w-full py-3.5 bg-emerald-600 text-white dark:bg-white dark:text-black text-center text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-md"
               >
                 <span>Get a Free Quote</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -181,13 +210,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
                   setMobileMenuOpen(false);
                   handleWhatsAppClick();
                 }}
-                className="w-full py-3 bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 text-center text-xs uppercase tracking-widest font-semibold backdrop-blur-md flex items-center justify-center gap-2"
+                className="w-full py-3 bg-emerald-50 dark:bg-emerald-600/30 border border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-center text-xs uppercase tracking-widest font-semibold backdrop-blur-md flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Chat on WhatsApp</span>
               </button>
 
-              <div className="text-center pt-2 text-[11px] text-gray-400">
+              <div className="text-center pt-2 text-[11px] text-slate-500 dark:text-gray-400">
                 {COMPANY_CONFIG.location} • {COMPANY_CONFIG.email}
               </div>
             </div>
@@ -197,3 +226,4 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
     </>
   );
 };
+

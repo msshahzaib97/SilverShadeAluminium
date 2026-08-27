@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustStrip } from './components/TrustStrip';
@@ -38,67 +39,70 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0d0e] text-[#f2f2f3] selection:bg-slate-300 selection:text-black overflow-x-hidden">
-      {/* Sticky Luxury Navigation Header */}
-      <Navbar onOpenQuoteModal={handleOpenQuoteModal} />
+    <ThemeProvider>
+      <div className="min-h-screen bg-[#f8faf9] dark:bg-[#060a08] text-slate-900 dark:text-slate-100 selection:bg-emerald-500 selection:text-white overflow-x-hidden transition-colors duration-300 font-sans">
+        {/* Sticky Luxury Navigation Header with Theme Toggle */}
+        <Navbar onOpenQuoteModal={handleOpenQuoteModal} />
 
-      {/* Main Sections */}
-      <main>
-        {/* Full-Screen Cinematic Hero */}
-        <Hero
-          onOpenQuoteModal={() => handleOpenQuoteModal()}
-          onExploreServices={handleExploreServices}
+        {/* Main Sections */}
+        <main>
+          {/* Full-Screen Cinematic Hero */}
+          <Hero
+            onOpenQuoteModal={() => handleOpenQuoteModal()}
+            onExploreServices={handleExploreServices}
+          />
+
+          {/* Trust & Introduction Strip */}
+          <TrustStrip />
+
+          {/* Split-Screen About Section */}
+          <AboutSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+
+          {/* Architectural Services Grid */}
+          <ServicesSection onOpenQuoteModal={handleOpenQuoteModal} />
+
+          {/* Featured Projects Portfolio */}
+          <FeaturedProjects onOpenQuoteModal={handleOpenQuoteModal} />
+
+          {/* Built for Dubai - Feature Section */}
+          <PremiumFeatureSection />
+
+          {/* Why Silver Shade Aluminium - 6 Cards */}
+          <WhyChooseUsSection />
+
+          {/* From Concept to Completion - 4-Step Process */}
+          <ProcessSection />
+
+          {/* Transforming Spaces With Precision - Draggable Before/After Slider */}
+          <BeforeAfterSection />
+
+          {/* Client Experiences & Reviews */}
+          <TestimonialSection />
+
+          {/* Dramatic Cinematic CTA Section */}
+          <CtaSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+
+          {/* FAQ Accordion Section */}
+          <FaqSection />
+
+          {/* Contact & Consultation Section */}
+          <ContactSection />
+        </main>
+
+        {/* Luxury Footer */}
+        <Footer onOpenQuoteModal={handleOpenQuoteModal} />
+
+        {/* Floating Bottom-Right WhatsApp Button with Quick Chat */}
+        <FloatingWhatsApp />
+
+        {/* Interactive Project Estimation & Quote Request Modal */}
+        <QuoteModal
+          isOpen={quoteModalOpen}
+          onClose={handleCloseQuoteModal}
+          initialService={selectedQuoteService}
         />
-
-        {/* Trust & Introduction Strip */}
-        <TrustStrip />
-
-        {/* Split-Screen About Section */}
-        <AboutSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
-
-        {/* Architectural Services Grid */}
-        <ServicesSection onOpenQuoteModal={handleOpenQuoteModal} />
-
-        {/* Featured Projects Portfolio */}
-        <FeaturedProjects onOpenQuoteModal={handleOpenQuoteModal} />
-
-        {/* Built for Dubai - Dark Feature Section */}
-        <PremiumFeatureSection />
-
-        {/* Why Silver Shade Aluminium - 6 Cards */}
-        <WhyChooseUsSection />
-
-        {/* From Concept to Completion - 4-Step Process */}
-        <ProcessSection />
-
-        {/* Transforming Spaces With Precision - Draggable Before/After Slider */}
-        <BeforeAfterSection />
-
-        {/* Client Experiences & Reviews */}
-        <TestimonialSection />
-
-        {/* Dramatic Cinematic CTA Section */}
-        <CtaSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
-
-        {/* FAQ Accordion Section */}
-        <FaqSection />
-
-        {/* Contact & Consultation Section */}
-        <ContactSection />
-      </main>
-
-      {/* Dark Luxury Footer */}
-      <Footer onOpenQuoteModal={handleOpenQuoteModal} />
-
-      {/* Floating Bottom-Right WhatsApp Button with Quick Chat */}
-      <FloatingWhatsApp />
-
-      {/* Interactive Project Estimation & Quote Request Modal */}
-      <QuoteModal
-        isOpen={quoteModalOpen}
-        onClose={handleCloseQuoteModal}
-        initialService={selectedQuoteService}
-      />
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
+

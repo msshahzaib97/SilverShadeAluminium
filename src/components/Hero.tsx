@@ -18,21 +18,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-28 sm:pt-32 pb-0 overflow-hidden bg-[#0a0a0a]"
+      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-28 sm:pt-32 pb-0 overflow-hidden bg-slate-900 dark:bg-[#060a08]"
     >
-      {/* Background Architectural Image with Frosted Glass Vignette */}
+      {/* Background Architectural Image with Adaptive Frosted Glass Vignette */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90"
           alt="Dubai Luxury Villa with Modern Architectural Aluminium and Glass Doors"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.6] contrast-[1.05]"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.45] dark:brightness-[0.4] contrast-[1.08]"
           fetchPriority="high"
         />
-        {/* Layered Translucent Frosted Glass Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/50 to-transparent"></div>
+        {/* Layered Translucent Gradients for Light & Dark readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060a08] via-black/60 to-black/75"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"></div>
+        {/* Emerald ambient glow */}
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
         {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-40"></div>
       </div>
 
       {/* Hero Content Container */}
@@ -44,23 +46,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-4 mb-6 sm:mb-8"
+            className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8"
           >
-            <div className="h-px w-10 sm:w-14 bg-white/40"></div>
-            <span className="text-[10px] sm:text-xs tracking-[0.45em] text-white/70 uppercase font-medium">
-              Dubai • Aluminium &amp; Glass Solutions
+            <div className="h-px w-8 sm:w-12 bg-emerald-400"></div>
+            <span className="text-[10px] sm:text-xs tracking-[0.4em] text-emerald-400 uppercase font-semibold">
+              Dubai • Architectural Aluminium &amp; Glass
             </span>
           </motion.div>
 
-          {/* Main Headline with Frosted Glass Contrast */}
+          {/* Main Headline with Modern White & Emerald Contrast */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl md:text-7xl font-light leading-[1.0] sm:leading-[0.96] mb-6 sm:mb-8 tracking-tighter text-white"
+            className="text-4xl sm:text-6xl md:text-7xl font-light leading-[1.0] sm:leading-[0.96] mb-6 sm:mb-8 tracking-tight text-white"
           >
             Premium Aluminium <br />
-            <span className="text-white/45 font-normal">
+            <span className="text-emerald-400 font-normal">
               &amp; Glass Solutions
             </span>
           </motion.h1>
@@ -70,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg text-gray-300 font-light max-w-xl mb-4 leading-relaxed tracking-wide"
+            className="text-base sm:text-lg text-emerald-50 font-light max-w-xl mb-4 leading-relaxed tracking-wide"
           >
             Designed with precision. Crafted for performance. Built to elevate modern Dubai spaces.
           </motion.p>
@@ -80,12 +82,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xs sm:text-sm text-gray-400 max-w-xl leading-relaxed mb-8 sm:mb-10 font-normal"
+            className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed mb-8 sm:mb-10 font-normal"
           >
-            Custom aluminium doors, panoramic sliding systems, minimal glass partitions, facades and bespoke architectural works for residential and commercial properties.
+            Custom aluminium doors, panoramic sliding systems, minimal acoustic glass partitions, facades, and bespoke architectural metalworks for luxury villas and commercial towers.
           </motion.p>
 
-          {/* Frosted CTAs */}
+          {/* Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -95,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             <button
               id="hero-quote-btn"
               onClick={onOpenQuoteModal}
-              className="bg-white text-black px-8 sm:px-10 py-4 text-[12px] font-bold uppercase tracking-widest hover:bg-slate-200 transition-all flex items-center justify-center gap-3 cursor-pointer shadow-xl"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 sm:px-10 py-4 text-[12px] font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-3 cursor-pointer shadow-xl shadow-emerald-950/40 border border-emerald-400/40"
             >
               <span>Get a Free Quote</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -104,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             <button
               id="hero-services-btn"
               onClick={onExploreServices}
-              className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-8 sm:px-10 py-4 text-[12px] font-bold uppercase tracking-widest hover:bg-white/20 transition-all flex items-center justify-center cursor-pointer"
+              className="backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/25 text-white px-8 sm:px-10 py-4 text-[12px] font-bold uppercase tracking-widest transition-all flex items-center justify-center cursor-pointer"
             >
               <span>Explore Our Services</span>
             </button>
@@ -112,8 +114,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
         </div>
       </div>
 
-      {/* Bottom Frosted Glass Strip */}
-      <div className="relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-xl">
+      {/* Bottom Frosted Glass Trust Strip */}
+      <div className="relative z-10 w-full border-t border-white/10 bg-black/50 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 py-4 sm:py-6">
             {trustItems.map((item, idx) => (
@@ -122,13 +124,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
                 id={`trust-indicator-${idx}`}
                 className="px-4 py-2 sm:px-6 flex flex-col justify-center"
               >
-                <div className="font-mono text-[10px] text-gray-500 tracking-wider uppercase mb-1">
+                <div className="font-mono text-[10px] text-emerald-400 tracking-wider uppercase mb-1 font-semibold">
                   {item.num} / {item.tag}
                 </div>
                 <div className="text-sm font-semibold text-white tracking-wide">
                   {item.label}
                 </div>
-                <div className="text-[11px] text-gray-400 hidden sm:block mt-0.5 truncate font-light">
+                <div className="text-[11px] text-slate-300 hidden sm:block mt-0.5 truncate font-light">
                   {item.detail}
                 </div>
               </div>
@@ -139,3 +141,4 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
     </section>
   );
 };
+

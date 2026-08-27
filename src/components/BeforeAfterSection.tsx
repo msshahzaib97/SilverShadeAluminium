@@ -39,23 +39,23 @@ export const BeforeAfterSection: React.FC = () => {
   };
 
   return (
-    <section id="transformations" className="py-24 sm:py-32 bg-[#0a0a0a] relative border-t border-white/10">
+    <section id="transformations" className="py-24 sm:py-32 bg-[#f8faf9] dark:bg-[#060a08] relative border-t border-emerald-900/10 dark:border-emerald-500/15 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-px w-8 bg-white/40"></div>
-              <span className="text-[10px] sm:text-xs font-medium tracking-[0.4em] text-gray-400 uppercase">
+              <div className="h-px w-8 bg-emerald-600 dark:bg-emerald-400"></div>
+              <span className="text-[10px] sm:text-xs font-bold tracking-[0.35em] text-emerald-700 dark:text-emerald-400 uppercase">
                 SPATIAL UPGRADES
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-white">
-              Transforming Spaces <span className="text-white/40 font-normal">With Precision</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 dark:text-white">
+              Transforming Spaces <span className="text-emerald-700 dark:text-emerald-400 font-normal">With Precision</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-gray-400 max-w-md font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-400 max-w-md font-normal leading-relaxed">
             Drag the interactive divider to witness the dramatic architectural elevation achieved through modern aluminium and glass systems.
           </p>
         </div>
@@ -74,14 +74,14 @@ export const BeforeAfterSection: React.FC = () => {
                 }}
                 className={`p-4 rounded-none text-left transition-all border cursor-pointer ${
                   isSelected
-                    ? 'bg-white text-black border-white shadow-xl'
-                    : 'backdrop-blur-md bg-white/[0.03] text-gray-400 border-white/10 hover:border-white/25 hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-600/20 dark:bg-emerald-500 font-medium'
+                    : 'backdrop-blur-md bg-white dark:bg-white/[0.03] text-slate-600 dark:text-gray-400 border-emerald-900/10 dark:border-white/10 hover:border-emerald-500/40 hover:text-emerald-700 dark:hover:text-white hover:bg-emerald-50/50 dark:hover:bg-white/[0.06]'
                 }`}
               >
-                <div className="text-[9px] font-mono tracking-widest uppercase opacity-70 mb-1">
+                <div className="text-[9px] font-mono tracking-widest uppercase opacity-80 mb-1 font-semibold">
                   0{idx + 1} / EXAMPLE
                 </div>
-                <div className="text-xs sm:text-sm font-medium tracking-wide truncate">
+                <div className="text-xs sm:text-sm font-semibold tracking-wide truncate">
                   {item.title}
                 </div>
               </button>
@@ -90,7 +90,7 @@ export const BeforeAfterSection: React.FC = () => {
         </div>
 
         {/* Interactive Comparison Stage */}
-        <div className="rounded-none backdrop-blur-xl bg-white/[0.03] border border-white/15 p-4 sm:p-6 shadow-2xl">
+        <div className="rounded-none backdrop-blur-xl bg-white dark:bg-white/[0.03] border border-emerald-900/15 dark:border-white/15 p-4 sm:p-6 shadow-xl">
           <div
             ref={containerRef}
             onMouseDown={handleMouseDown}
@@ -98,7 +98,7 @@ export const BeforeAfterSection: React.FC = () => {
             onMouseLeave={handleMouseUp}
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
-            className="relative h-[380px] sm:h-[500px] md:h-[580px] w-full overflow-hidden select-none cursor-ew-resize bg-black"
+            className="relative h-[380px] sm:h-[500px] md:h-[580px] w-full overflow-hidden select-none cursor-ew-resize bg-slate-900"
           >
             {/* After Image (Full background) */}
             <img
@@ -106,7 +106,7 @@ export const BeforeAfterSection: React.FC = () => {
               alt={`${activeItem.title} - After Installation`}
               className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
             />
-            <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-black/70 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono uppercase tracking-widest">
+            <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-emerald-950/80 backdrop-blur-md border border-emerald-400/40 text-emerald-300 text-[10px] font-mono uppercase tracking-widest font-bold">
               {activeItem.afterLabel}
             </div>
 
@@ -118,48 +118,48 @@ export const BeforeAfterSection: React.FC = () => {
               <img
                 src={activeItem.beforeImage}
                 alt={`${activeItem.title} - Before Installation`}
-                className="absolute inset-0 w-full h-full object-cover object-center filter grayscale-[30%] brightness-75 pointer-events-none"
+                className="absolute inset-0 w-full h-full object-cover object-center filter grayscale-[25%] brightness-85 pointer-events-none"
                 style={{
                   width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%',
                   maxWidth: 'none',
                 }}
               />
-              <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-black/80 backdrop-blur-md border border-white/20 text-gray-300 text-[10px] font-mono uppercase tracking-widest">
+              <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-black/80 backdrop-blur-md border border-white/20 text-gray-200 text-[10px] font-mono uppercase tracking-widest">
                 {activeItem.beforeLabel}
               </div>
             </div>
 
             {/* Vertical Divider Line & Draggable Handle */}
             <div
-              className="absolute top-0 bottom-0 z-20 w-[1.5px] bg-white cursor-ew-resize"
+              className="absolute top-0 bottom-0 z-20 w-[2px] bg-emerald-400 cursor-ew-resize shadow-lg"
               style={{ left: `${sliderPosition}%` }}
             >
               {/* Drag Handle */}
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 bg-white text-black shadow-2xl flex items-center justify-center border border-black/20 hover:scale-110 active:scale-95 transition-transform">
-                <ArrowLeftRight className="w-3.5 h-3.5" />
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 bg-emerald-600 text-white shadow-2xl flex items-center justify-center border border-emerald-300 hover:scale-110 active:scale-95 transition-transform">
+                <ArrowLeftRight className="w-4 h-4" />
               </div>
             </div>
           </div>
 
           {/* Underneath Comparison Info */}
-          <div className="mt-6 pt-4 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="mt-6 pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-1">
-                <h3 className="text-base sm:text-lg font-light text-white tracking-tight">
+                <h3 className="text-base sm:text-lg font-medium text-slate-900 dark:text-white tracking-tight">
                   {activeItem.subtitle}
                 </h3>
-                <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-gray-400 bg-white/5 px-2 py-0.5 border border-white/10">
-                  <MapPin className="w-3 h-3 text-gray-400" />
+                <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-white/5 px-2 py-0.5 border border-emerald-200 dark:border-white/10 font-semibold">
+                  <MapPin className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
                   {activeItem.location}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-gray-400 max-w-2xl font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-400 max-w-2xl font-normal leading-relaxed">
                 {activeItem.description}
               </p>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-gray-400 shrink-0 font-mono text-[11px]">
-              <SplitSquareVertical className="w-3.5 h-3.5 text-gray-400" />
+            <div className="flex items-center gap-2 text-xs text-emerald-700 dark:text-emerald-400 shrink-0 font-mono text-[11px] font-semibold">
+              <SplitSquareVertical className="w-4 h-4" />
               <span>DRAG SLIDER TO COMPARE</span>
             </div>
           </div>
@@ -169,3 +169,4 @@ export const BeforeAfterSection: React.FC = () => {
     </section>
   );
 };
+
