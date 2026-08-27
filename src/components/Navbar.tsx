@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      "Hello Silver Shade Aluminium, I would like to inquire about aluminium and glass solutions for my property in Dubai."
+      "Hello Silver Shade Aluminium, I would like to inquire about aluminium and glass solutions for my property."
     );
     window.open(`https://wa.me/${COMPANY_CONFIG.whatsappNumber.replace(/[^0-9]/g, '')}?text=${message}`, '_blank');
   };

@@ -9,10 +9,10 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices }) => {
   const trustItems = [
-    { num: '01', tag: 'BESPOKE', label: 'Custom Design', detail: 'Tailored architectural engineering' },
-    { num: '02', tag: 'QUALITY', label: 'Premium Finishes', detail: 'Marine-grade anodized profiles' },
-    { num: '03', tag: 'TEAM', label: 'Certified Installers', detail: 'In-house UAE master craftsmen' },
-    { num: '04', tag: 'LOCATION', label: 'Dubai Based', detail: 'UAE residential & commercial' },
+    { num: '01', tag: 'VILLAS & KITCHENS', label: 'Villas & Cabinets', detail: 'Turnkey facades & aluminium kitchens' },
+    { num: '02', tag: 'SHADES & PERGOLAS', label: 'Car Parking & Qarmid', detail: 'Tensile shades, bioclimatic louvers' },
+    { num: '03', tag: 'TENTS & MAJLIS', label: 'Royal & Labour Tents', detail: 'Tabuk Majlis, Malaki & Winter tents' },
+    { num: '04', tag: 'GATES & RAILINGS', label: 'Kuwaiti Iron & Glass', detail: 'Decorative fencing, balustrades & doors' },
   ];
 
   return (
@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90"
-          alt="Dubai Luxury Villa with Modern Architectural Aluminium and Glass Doors"
+          alt="Luxury Villa with Modern Architectural Aluminium, Glass Doors and Pergolas"
           className="w-full h-full object-cover object-center scale-105 filter brightness-[0.45] dark:brightness-[0.4] contrast-[1.08]"
           fetchPriority="high"
         />
@@ -49,8 +49,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8"
           >
             <div className="h-px w-8 sm:w-12 bg-emerald-400"></div>
-            <span className="text-[10px] sm:text-xs tracking-[0.4em] text-emerald-400 uppercase font-semibold">
-              Dubai • Architectural Aluminium &amp; Glass
+            <span className="text-[10px] sm:text-xs tracking-[0.35em] text-emerald-400 uppercase font-semibold">
+              Musaffah, Abu Dhabi • UAE Architectural Engineering
             </span>
           </motion.div>
 
@@ -61,9 +61,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-6xl md:text-7xl font-light leading-[1.0] sm:leading-[0.96] mb-6 sm:mb-8 tracking-tight text-white"
           >
-            Premium Aluminium <br />
+            Aluminium, Glass, <br />
             <span className="text-emerald-400 font-normal">
-              &amp; Glass Solutions
+              Shades &amp; Tents Solutions
             </span>
           </motion.h1>
 
@@ -72,9 +72,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg text-emerald-50 font-light max-w-xl mb-4 leading-relaxed tracking-wide"
+            className="text-base sm:text-lg text-emerald-50 font-light max-w-2xl mb-4 leading-relaxed tracking-wide"
           >
-            Designed with precision. Crafted for performance. Built to elevate modern Dubai spaces.
+            Villas • Kitchen Cabinets • Glass &amp; Aluminium Doors • Car Parking Shades • Pergolas • سواتر حجاب • مجلس تبوك • قراميد • Labour &amp; Royal Tents • سيف حديد كويتي • Railings • Windows
           </motion.p>
 
           {/* Additional Description */}
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
             transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed mb-8 sm:mb-10 font-normal"
           >
-            Custom aluminium doors, panoramic sliding systems, minimal acoustic glass partitions, facades, and bespoke architectural metalworks for luxury villas and commercial towers.
+            Custom fabrication and certified installation across Abu Dhabi, Dubai, and all UAE emirates. In-house engineering facility in Musaffah Industrial Area.
           </motion.p>
 
           {/* Action Buttons */}
@@ -108,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onExploreServices 
               onClick={onExploreServices}
               className="backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/25 text-white px-8 sm:px-10 py-4 text-[12px] font-bold uppercase tracking-widest transition-all flex items-center justify-center cursor-pointer"
             >
-              <span>Explore Our Services</span>
+              <span>Explore All 16 Capabilities</span>
             </button>
           </motion.div>
         </div>

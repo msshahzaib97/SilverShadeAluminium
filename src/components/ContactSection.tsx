@@ -9,8 +9,8 @@ export const ContactSection: React.FC = () => {
     fullName: '',
     phone: '',
     email: '',
-    serviceRequired: 'Aluminium Doors',
-    projectLocation: 'Dubai',
+    serviceRequired: 'Luxury Villas & Facades',
+    projectLocation: 'Abu Dhabi / Dubai',
     propertyType: 'villa',
     projectDetails: '',
     preferredContact: 'whatsapp',
@@ -103,8 +103,16 @@ export const ContactSection: React.FC = () => {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Phone</span>
-                    <span className="text-slate-900 dark:text-white font-medium">{COMPANY_CONFIG.phone}</span>
+                    <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Direct Phone</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mt-0.5">
+                      <a href="tel:+971523352536" className="text-slate-900 dark:text-white font-medium hover:text-emerald-600 transition-colors">
+                        +971 52 335 2536
+                      </a>
+                      <span className="hidden sm:inline text-slate-400">•</span>
+                      <a href="tel:+971566076460" className="text-slate-900 dark:text-white font-medium hover:text-emerald-600 transition-colors">
+                        +971 56 607 6460
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -114,8 +122,26 @@ export const ContactSection: React.FC = () => {
                     <MessageCircle className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold text-emerald-800 dark:text-emerald-400 uppercase tracking-wider block">WhatsApp</span>
-                    <span className="text-slate-900 dark:text-white font-medium">{COMPANY_CONFIG.whatsappDisplay}</span>
+                    <span className="text-[11px] font-bold text-emerald-800 dark:text-emerald-400 uppercase tracking-wider block">WhatsApp Direct</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mt-0.5">
+                      <a
+                        href="https://wa.me/971523352536"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-900 dark:text-white font-medium hover:text-emerald-600 transition-colors"
+                      >
+                        +971 52 335 2536
+                      </a>
+                      <span className="hidden sm:inline text-slate-400">•</span>
+                      <a
+                        href="https://wa.me/971566076460"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-900 dark:text-white font-medium hover:text-emerald-600 transition-colors"
+                      >
+                        +971 56 607 6460
+                      </a>
+                    </div>
                   </div>
                 </div>
 

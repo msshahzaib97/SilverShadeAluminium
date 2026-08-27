@@ -10,9 +10,9 @@ interface QuoteModalProps {
 }
 
 export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initialService }) => {
-  const [selectedService, setSelectedService] = useState<string>(initialService || 'Aluminium Doors');
+  const [selectedService, setSelectedService] = useState<string>(initialService || 'Luxury Villas & Facades');
   const [propertyType, setPropertyType] = useState<string>('Luxury Villa');
-  const [projectLocation, setProjectLocation] = useState<string>('Dubai');
+  const [projectLocation, setProjectLocation] = useState<string>('Abu Dhabi / Dubai');
   const [fullName, setFullName] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [email, setEmail] = useState<string>('');

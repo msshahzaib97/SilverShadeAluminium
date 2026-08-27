@@ -7,14 +7,14 @@ export const FloatingWhatsApp: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const quickPrompts = [
-    { label: 'Villa Slim Sliding Doors', text: 'Hello, I would like to get a quote for slim sliding doors for my villa in Dubai.' },
-    { label: 'Glass Partitions for Office', text: 'Hi Silver Shade, I need acoustic glass partitions for an office space in Dubai.' },
+    { label: 'Villa Slim Sliding Doors', text: 'Hello, I would like to get a quote for slim sliding doors for my villa.' },
+    { label: 'Glass Partitions for Office', text: 'Hi Silver Shade, I need acoustic glass partitions for our office space.' },
     { label: 'Motorized Aluminium Pergola', text: 'Hello, I am interested in a bioclimatic motorized aluminium pergola.' },
     { label: 'General Project Consultation', text: 'Hello Silver Shade Aluminium, I have architectural drawings to share for an estimate.' },
   ];
 
   const handleStartChat = (customText?: string) => {
-    const text = encodeURIComponent(customText || "Hello Silver Shade Aluminium, I would like to inquire about your aluminium and glass solutions in Dubai.");
+    const text = encodeURIComponent(customText || "Hello Silver Shade Aluminium, I would like to inquire about your aluminium and glass solutions.");
     window.open(`https://wa.me/${COMPANY_CONFIG.whatsappNumber.replace(/[^0-9]/g, '')}?text=${text}`, '_blank');
     setIsOpen(false);
   };
@@ -43,7 +43,7 @@ export const FloatingWhatsApp: React.FC = () => {
                   </div>
                   <div className="text-[10px] text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>Engineering Team Online (Dubai)</span>
+                    <span>Engineering Team Online (Musaffah, Abu Dhabi)</span>
                   </div>
                 </div>
               </div>

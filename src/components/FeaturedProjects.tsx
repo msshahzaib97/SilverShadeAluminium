@@ -15,27 +15,20 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onOpenQuoteM
 
   const categories = [
     'All',
-    'Luxury Villas',
-    'Aluminium Doors',
-    'Glass Doors',
-    'Sliding Systems',
-    'Glass Partitions',
-    'Aluminium Windows',
-    'Wardrobes',
-    'Facades',
-    'Pergolas',
-    'Railings',
+    'Villas & Architecture',
+    'Kitchen Cabinets',
+    'Tents & Majlis',
+    'Shading & Roofing',
+    'Railings & Ironworks',
   ];
 
   const filteredProjects = activeCategory === 'All'
     ? PROJECTS_DATA
     : PROJECTS_DATA.filter((p) => {
-        if (activeCategory === 'Railings') return p.category.toLowerCase().includes('railing');
-        if (activeCategory === 'Pergolas') return p.category.toLowerCase().includes('pergola');
-        if (activeCategory === 'Facades') return p.category.toLowerCase().includes('facade');
-        if (activeCategory === 'Wardrobes') return p.category.toLowerCase().includes('wardrobe');
-        if (activeCategory === 'Sliding Systems') return p.category.toLowerCase().includes('sliding');
-        return p.category.toLowerCase().includes(activeCategory.toLowerCase());
+        return p.category.toLowerCase().includes(activeCategory.toLowerCase()) ||
+               (activeCategory === 'Tents & Majlis' && (p.category.includes('Tent') || p.category.includes('Majlis'))) ||
+               (activeCategory === 'Shading & Roofing' && (p.category.includes('Shading') || p.category.includes('Pergola') || p.category.includes('Roofing'))) ||
+               (activeCategory === 'Railings & Ironworks' && (p.category.includes('Railing') || p.category.includes('Ironworks') || p.category.includes('Gate')));
       });
 
   return (

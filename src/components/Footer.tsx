@@ -57,17 +57,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
                     SILVER SHADE
                   </span>
                   <span className="text-[9px] tracking-[0.3em] text-emerald-400 uppercase font-medium">
-                    ALUMINIUM • DUBAI
+                    ALUMINIUM • ABU DHABI &amp; DUBAI
                   </span>
                 </div>
               </a>
 
               <p className="text-xs text-slate-400 max-w-sm leading-relaxed font-normal">
-                {COMPANY_CONFIG.tagline}. Specializing in bespoke minimal sliding systems, acoustic glass partitioning, high-performance windows, and luxury architectural envelope works across Dubai and the UAE.
+                {COMPANY_CONFIG.tagline}. Specializing in bespoke minimal sliding systems, acoustic glass partitioning, high-performance windows, and luxury architectural envelope works across Abu Dhabi, Dubai, and the UAE.
               </p>
 
               <div className="pt-2 text-[11px] text-emerald-400/80">
-                <span>Location: {COMPANY_CONFIG.location}</span>
+                <span>Headquarters: {COMPANY_CONFIG.location}</span>
               </div>
             </div>
 
@@ -113,10 +113,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
               </ul>
             </div>
 
-            {/* Dubai Contact */}
+            {/* Contact Details */}
             <div className="lg:col-span-3 space-y-3">
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-white">
-                Dubai Contact
+                Contact Details
               </div>
               <div className="space-y-2.5 text-xs text-slate-300">
                 <div className="flex items-start gap-2">
@@ -125,11 +125,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>{COMPANY_CONFIG.phone}</span>
+                  <a href="tel:+971523352536" className="hover:underline text-slate-200">+971 52 335 2536</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <a href="tel:+971566076460" className="hover:underline text-slate-200">+971 56 607 6460</a>
                 </div>
                 <div className="flex items-center gap-2">
                   <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span className="text-emerald-400 font-medium">{COMPANY_CONFIG.whatsappDisplay}</span>
+                  <a href="https://wa.me/971523352536" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline font-medium">
+                    +971 52 335 2536 / +971 56 607 6460
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -145,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
           {/* Bottom Bar */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
             <div>
-              &copy; 2026 Silver Shade Aluminium. All Rights Reserved. Dubai, UAE.
+              &copy; 2026 Silver Shade Aluminium. All Rights Reserved. Musaffah, Abu Dhabi, UAE.
             </div>
 
             <div className="flex items-center gap-6">
