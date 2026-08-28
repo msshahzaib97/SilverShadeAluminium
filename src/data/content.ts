@@ -462,6 +462,30 @@ export const PROJECTS_DATA: ProjectItem[] = [
     systemUsed: "Spanish Ceramic Qarmid 3-Tier System"
   },
   {
+    id: "wood-grain-awning-windows-qarmid",
+    title: "Wood-Grain Awning Windows & Clay Qarmid Roof (نوافذ خشبية)",
+    category: "Windows & Doors",
+    categorySlug: "windows-doors",
+    location: "Al Bahia / Khalifa City, Abu Dhabi",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+    year: "2025",
+    scope: "Italian vacuum wood-grain powder-coated top-hung awning aluminium windows with European stainless friction stays and Spanish Qarmid roofing",
+    description: "Custom wood-grain aluminium awning windows installed on Mediterranean villa facade with insulated terracotta clay tile roofing canopy.",
+    systemUsed: "Silver Shade Thermal Wood-Sublimation Awning Series"
+  },
+  {
+    id: "architectural-12-lite-black-window",
+    title: "12-Lite Multi-Pane Architectural Grid Windows (شبابيك مقسمة)",
+    category: "Windows & Doors",
+    categorySlug: "windows-doors",
+    location: "Al Raha Beach, Abu Dhabi",
+    image: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1200&q=85",
+    year: "2025",
+    scope: "Heavy 3x4 matrix monolithic architectural grid window systems with operable sliding sashes and double glazed acoustic glass",
+    description: "Expansive grid windows engineered for panoramic garden views, high acoustic isolation (42dB), and airtight desert dust protection.",
+    systemUsed: "Silver Shade Matrix 12-Lite Architectural Grid Series"
+  },
+  {
     id: "industrial-labour-camp-tents",
     title: "Musaffah Industrial Labour Accommodation Tents",
     category: "Tents & Majlis",

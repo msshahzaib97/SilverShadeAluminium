@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { TrustStrip } from './components/TrustStrip';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
+import { WindowsSection } from './components/WindowsSection';
 import { FeaturedProjects } from './components/FeaturedProjects';
 import { PremiumFeatureSection } from './components/PremiumFeatureSection';
 import { WhyChooseUsSection } from './components/WhyChooseUsSection';
@@ -60,6 +61,9 @@ export default function App() {
 
           {/* Architectural Services Grid */}
           <ServicesSection onOpenQuoteModal={handleOpenQuoteModal} />
+
+          {/* Architectural Windows Systems Showcase (Wood-Grain Awning, Sliding Transoms, Grid Panoramic, Exhaust Windows) */}
+          <WindowsSection onOpenQuoteModal={handleOpenQuoteModal} />
 
           {/* Featured Projects Portfolio */}
           <FeaturedProjects onOpenQuoteModal={handleOpenQuoteModal} />

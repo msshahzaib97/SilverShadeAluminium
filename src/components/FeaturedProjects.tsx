@@ -15,6 +15,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onOpenQuoteM
 
   const categories = [
     'All',
+    'Windows & Doors',
     'Villas & Architecture',
     'Kitchen Cabinets',
     'Tents & Majlis',
@@ -26,6 +27,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onOpenQuoteM
     ? PROJECTS_DATA
     : PROJECTS_DATA.filter((p) => {
         return p.category.toLowerCase().includes(activeCategory.toLowerCase()) ||
+               (activeCategory === 'Windows & Doors' && (p.category.includes('Window') || p.category.includes('Door') || p.category.includes('Glazing'))) ||
                (activeCategory === 'Tents & Majlis' && (p.category.includes('Tent') || p.category.includes('Majlis'))) ||
                (activeCategory === 'Shading & Roofing' && (p.category.includes('Shading') || p.category.includes('Pergola') || p.category.includes('Roofing'))) ||
                (activeCategory === 'Railings & Ironworks' && (p.category.includes('Railing') || p.category.includes('Ironworks') || p.category.includes('Gate')));
