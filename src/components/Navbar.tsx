@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowUpRight, MessageCircle, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
 import { COMPANY_CONFIG } from '../data/content';
-import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onOpenQuoteModal: (service?: string) => void;
@@ -11,7 +10,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,8 +52,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
         id="main-header"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
           isScrolled
-            ? 'bg-white/90 dark:bg-[#060a08]/90 border-b border-emerald-900/10 dark:border-emerald-500/15 py-3.5 shadow-lg shadow-emerald-950/5'
-            : 'bg-white/60 dark:bg-black/40 border-b border-emerald-900/10 dark:border-white/10 py-4 sm:py-5'
+            ? 'bg-[#060a08]/90 border-b border-emerald-500/15 py-3.5 shadow-lg shadow-emerald-950/20'
+            : 'bg-black/50 border-b border-white/10 py-4 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
@@ -65,55 +63,40 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
             id="brand-logo-link"
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-9 h-9 border border-emerald-600/30 dark:border-emerald-400/30 bg-emerald-50/80 dark:bg-emerald-950/40 backdrop-blur-md flex items-center justify-center relative overflow-hidden group-hover:border-emerald-500 group-hover:bg-emerald-500/10 transition-all shadow-sm">
-              <span className="text-xs font-bold tracking-widest text-emerald-700 dark:text-emerald-300">S</span>
+            <div className="w-9 h-9 border border-emerald-400/30 bg-emerald-950/40 backdrop-blur-md flex items-center justify-center relative overflow-hidden group-hover:border-emerald-500 group-hover:bg-emerald-500/10 transition-all shadow-sm">
+              <span className="text-xs font-bold tracking-widest text-emerald-300">S</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg sm:text-2xl font-bold tracking-tighter text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <span className="text-lg sm:text-2xl font-bold tracking-tighter text-white group-hover:text-emerald-400 transition-colors">
                 SILVER SHADE
               </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.35em] text-emerald-700 dark:text-emerald-400 uppercase -mt-1 font-semibold">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.35em] text-emerald-400 uppercase -mt-1 font-semibold">
                 Aluminium &amp; Glass
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-300">
+          <nav className="hidden lg:flex items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-slate-300">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 id={`nav-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
                 onClick={() => handleNavClick(link.href)}
-                className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer py-1 relative hover:opacity-100"
+                className="hover:text-emerald-400 transition-colors cursor-pointer py-1 relative hover:opacity-100"
               >
                 {link.name}
               </button>
             ))}
           </nav>
 
-          {/* Right CTAs: Theme Toggle, Quote Button, WhatsApp */}
+          {/* Right CTAs: Quote Button, WhatsApp */}
           <div className="hidden sm:flex items-center gap-4">
-            {/* Dark/Light Mode Switcher */}
-            <button
-              id="theme-toggle-btn"
-              onClick={toggleTheme}
-              title={theme === 'dark' ? 'Switch to Modern Light Mode' : 'Switch to Dark Mode'}
-              aria-label="Toggle light or dark theme"
-              className="p-2.5 rounded-full border border-emerald-900/15 dark:border-white/20 bg-emerald-50/80 dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-500/50 transition-all cursor-pointer shadow-sm"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-300 animate-spin-slow" />
-              ) : (
-                <Moon className="w-4 h-4 text-emerald-800" />
-              )}
-            </button>
-
             {/* Free Quote CTA */}
             <button
               id="header-quote-cta"
               onClick={() => onOpenQuoteModal()}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white dark:bg-emerald-500/20 dark:hover:bg-emerald-500/30 dark:text-emerald-200 border border-emerald-600 dark:border-emerald-400/40 px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all cursor-pointer backdrop-blur-sm shadow-md shadow-emerald-600/15"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/40 px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all cursor-pointer backdrop-blur-sm shadow-md shadow-emerald-600/20"
             >
               Get a Free Quote
             </button>
@@ -123,26 +106,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               id="header-whatsapp-btn"
               onClick={handleWhatsAppClick}
               title="Chat on WhatsApp"
-              className="w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center cursor-pointer shadow-md shadow-emerald-700/20 border border-emerald-400/40 transition-all hover:scale-105 active:scale-95 text-white"
+              className="w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center cursor-pointer shadow-md shadow-emerald-700/30 border border-emerald-400/40 transition-all hover:scale-105 active:scale-95 text-white"
             >
               <MessageCircle className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Mobile Actions (Theme Toggle & Menu Toggle) */}
+          {/* Mobile Actions (Menu Toggle & WhatsApp) */}
           <div className="flex sm:hidden items-center gap-2.5">
-            <button
-              id="mobile-theme-toggle"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="p-2 rounded-full border border-emerald-900/15 dark:border-white/20 bg-emerald-50/80 dark:bg-white/5 text-slate-700 dark:text-slate-200"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-300" />
-              ) : (
-                <Moon className="w-4 h-4 text-emerald-800" />
-              )}
-            </button>
             <button
               id="mobile-whatsapp-btn"
               onClick={handleWhatsAppClick}
@@ -154,7 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 border border-emerald-900/15 dark:border-white/20 bg-white/60 dark:bg-white/5 backdrop-blur-md text-slate-800 dark:text-white hover:bg-emerald-50 dark:hover:bg-white/10 transition-colors"
+              className="p-2 border border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
