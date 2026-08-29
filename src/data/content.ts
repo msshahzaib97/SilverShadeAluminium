@@ -21,6 +21,72 @@ export const COMPANY_CONFIG = {
   establishedYear: 2026,
 };
 
+export const ALUMINIUM_SYSTEM_OPTIONS = [
+  {
+    id: "10cm-single-glass",
+    name: "10cm Aluminium with Single Glass",
+    arabicName: "ألمنيوم 10 سم زجاج مفرد",
+    description: "Standard 100mm extruded aluminium profile system with single tempered safety glass (6mm/8mm/10mm). Ideal for interior partitions and standard residential windows.",
+    category: "Aluminium Systems"
+  },
+  {
+    id: "10cm-double-glass",
+    name: "10cm Aluminium with Double Glass",
+    arabicName: "ألمنيوم 10 سم زجاج دبل",
+    description: "Heavy-duty 100mm aluminium profile with double glazed insulated acoustic Low-E glass (6mm+12A+6mm). Superior heat barrier and dust isolation.",
+    category: "Aluminium Systems"
+  },
+  {
+    id: "10.5cm-single-glass",
+    name: "10.5cm Aluminium with Single Glass",
+    arabicName: "ألمنيوم 10.5 سم زجاج مفرد",
+    description: "Reinforced 105mm architectural profile with deeper glazing bead for single toughened glass. Extra wind load resistance for villa exterior openings.",
+    category: "Aluminium Systems"
+  },
+  {
+    id: "10.5cm-double-glass",
+    name: "10.5cm Aluminium with Double Glass",
+    arabicName: "ألمنيوم 10.5 سم زجاج دبل",
+    description: "Premium 105mm thermal-acoustic aluminium profile engineered for high-performance double insulated glass (up to 24mm DGU). Maximum thermal barrier for UAE summers.",
+    category: "Aluminium Systems"
+  },
+  {
+    id: "curtain-wall-10x5",
+    name: "Curtain Wall 10x5 cm (100x50 mm)",
+    arabicName: "كيرتن وول واجهات زجاجية 10×5 سم",
+    description: "100mm x 50mm heavy structural mullion & transom curtain wall system. Ideal for double-height villa facades, commercial showrooms, and grand glass envelopes.",
+    category: "Curtain Wall Systems"
+  },
+  {
+    id: "curtain-wall-8x5",
+    name: "Curtain Wall 8x5 cm (80x50 mm)",
+    arabicName: "كيرتن وول واجهات زجاجية 8×5 سم",
+    description: "80mm x 50mm medium structural grid curtain wall system for residential villa facade openings, entrance double glazing, and stairwell light wells.",
+    category: "Curtain Wall Systems"
+  },
+  {
+    id: "12mm-toughened-frameless",
+    name: "12mm Toughened Frameless Glass",
+    arabicName: "زجاج سيكوريت 12 ملم بدون إطار",
+    description: "Monolithic 12mm tempered safety glass for frameless partitions, shower cabins, and staircase balustrades.",
+    category: "Structural Glass"
+  },
+  {
+    id: "sentryglas-laminated",
+    name: "SentryGlas Structural Laminated Glass",
+    arabicName: "زجاج مصفح سانتري جلاس عالي الأمان",
+    description: "DuPont SGP laminated structural glass for high-load railings, cantilevered stairs, and impact-resistant envelopes.",
+    category: "Structural Glass"
+  },
+  {
+    id: "smart-switchable-pdlc",
+    name: "Smart Switchable Privacy PDLC Glass",
+    arabicName: "زجاج ذكي قابل للتبديل للخصوصية",
+    description: "Electrically switchable polymer dispersed liquid crystal glass for instant frosted privacy on demand.",
+    category: "Smart Glass"
+  }
+];
+
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "villas-architectural",
@@ -484,6 +550,30 @@ export const PROJECTS_DATA: ProjectItem[] = [
     scope: "Heavy 3x4 matrix monolithic architectural grid window systems with operable sliding sashes and double glazed acoustic glass",
     description: "Expansive grid windows engineered for panoramic garden views, high acoustic isolation (42dB), and airtight desert dust protection.",
     systemUsed: "Silver Shade Matrix 12-Lite Architectural Grid Series"
+  },
+  {
+    id: "luxury-villa-glass-staircase-railing",
+    title: "Minimalist Villa Glass Staircase Balustrade (درابزين زجاجي)",
+    category: "Railings & Ironworks",
+    categorySlug: "railings-ironworks",
+    location: "Al Yasmina / Khalifa City, Abu Dhabi",
+    image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=85",
+    year: "2025",
+    scope: "15mm toughened safety glass with side-mounted 316 stainless spigots and slim matte black aluminium handrail",
+    description: "Architectural glass balustrade engineered for open-concept duplex villa stairs with integrated warm LED step illumination.",
+    systemUsed: "Silver Shade VistaClear Frameless Glass Series"
+  },
+  {
+    id: "matte-black-picket-staircase-railing",
+    title: "Matte Black Aluminium Vertical Picket Railing (درابزين ألمنيوم)",
+    category: "Railings & Ironworks",
+    categorySlug: "railings-ironworks",
+    location: "Saadiyat Island, Abu Dhabi",
+    image: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1200&q=85",
+    year: "2025",
+    scope: "Architectural 6063-T6 extruded aluminium vertical slat balustrades with continuous ergonomic handrail and heavy newel posts",
+    description: "Precision-spaced child-safe vertical aluminium balustrades with scratch-resistant Qualicoat Class 2 matte black finish.",
+    systemUsed: "Silver Shade Geometric Picket 25x25 Series"
   },
   {
     id: "industrial-labour-camp-tents",

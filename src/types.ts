@@ -61,6 +61,7 @@ export interface QuoteFormData {
   phone: string;
   email: string;
   serviceRequired: string;
+  systemSpecification?: string;
   projectLocation: string;
   propertyType: 'villa' | 'apartment' | 'commercial' | 'retail' | 'other';
   projectDetails: string;

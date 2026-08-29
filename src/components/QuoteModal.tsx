@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Send, MessageCircle, CheckCircle2, Calculator, Sparkles, ArrowRight } from 'lucide-react';
-import { COMPANY_CONFIG, SERVICES_DATA } from '../data/content';
+import { COMPANY_CONFIG, SERVICES_DATA, ALUMINIUM_SYSTEM_OPTIONS } from '../data/content';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -17,7 +17,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
   const [phone, setPhone] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [dimensions, setDimensions] = useState<string>('');
-  const [glassType, setGlassType] = useState<string>('Double Glazed Acoustic Low-E');
+  const [glassType, setGlassType] = useState<string>('10cm Aluminium with Double Glass');
   const [notes, setNotes] = useState<string>('');
   const [submitted, setSubmitted] = useState<string | null>(null);
 
@@ -40,7 +40,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
       `• Service: ${selectedService}\n` +
       `• Property: ${propertyType}\n` +
       `• Location: ${projectLocation}\n` +
-      `• Glass Specification: ${glassType}\n` +
+      `• System & Profile: ${glassType}\n` +
       `• Approx Dimensions: ${dimensions || 'To be measured on site'}\n` +
       `• Client Name: ${fullName || 'Client'}\n` +
       `• Contact: ${phone || email || 'Requested WhatsApp Contact'}\n` +
@@ -172,19 +172,48 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                      Glazing Preference
+                      Aluminium Profile / Glazing System
                     </label>
                     <select
                       value={glassType}
                       onChange={(e) => setGlassType(e.target.value)}
                       className="w-full px-4 py-3 bg-slate-50 dark:bg-black/70 border border-slate-200 dark:border-white/15 rounded-none text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:border-emerald-600"
                     >
-                      <option value="Double Glazed Acoustic Low-E" className="bg-white dark:bg-[#121418]">Double Glazed Acoustic Low-E</option>
-                      <option value="Triple Glazed Thermal Barrier" className="bg-white dark:bg-[#121418]">Triple Glazed Thermal Barrier</option>
-                      <option value="12mm Toughened Frameless" className="bg-white dark:bg-[#121418]">12mm Toughened Frameless</option>
-                      <option value="SentryGlas Structural Laminated" className="bg-white dark:bg-[#121418]">SentryGlas Structural Laminated</option>
-                      <option value="Smart Switchable Privacy Glass" className="bg-white dark:bg-[#121418]">Smart Switchable Privacy Glass</option>
-                      <option value="Reeded / Fluted Decorative Glass" className="bg-white dark:bg-[#121418]">Reeded / Fluted Decorative Glass</option>
+                      <optgroup label="Aluminium Profile Systems (قطاعات ألمنيوم)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                        <option value="10cm Aluminium with Single Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          10cm Aluminium with Single Glass (ألمنيوم 10 سم زجاج مفرد)
+                        </option>
+                        <option value="10cm Aluminium with Double Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          10cm Aluminium with Double Glass (ألمنيوم 10 سم زجاج دبل)
+                        </option>
+                        <option value="10.5cm Aluminium with Single Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          10.5cm Aluminium with Single Glass (ألمنيوم 10.5 سم زجاج مفرد)
+                        </option>
+                        <option value="10.5cm Aluminium with Double Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          10.5cm Aluminium with Double Glass (ألمنيوم 10.5 سم زجاج دبل)
+                        </option>
+                      </optgroup>
+
+                      <optgroup label="Curtain Wall Systems (كيرتن وول واجهات)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                        <option value="Curtain Wall 10x5 cm (100x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Curtain Wall 10x5 cm (100x50 mm) (كيرتن وول واجهات 10×5 سم)
+                        </option>
+                        <option value="Curtain Wall 8x5 cm (80x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Curtain Wall 8x5 cm (80x50 mm) (كيرتن وول واجهات 8×5 سم)
+                        </option>
+                      </optgroup>
+
+                      <optgroup label="Architectural Glass & Balustrades (زجاج معماري وسيكوريت)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                        <option value="12mm Toughened Frameless Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          12mm Toughened Frameless Glass (زجاج سيكوريت 12 ملم)
+                        </option>
+                        <option value="SentryGlas Structural Laminated Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          SentryGlas Structural Laminated Glass (زجاج مصفح عالي الأمان)
+                        </option>
+                        <option value="Smart Switchable Privacy PDLC Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Smart Switchable Privacy PDLC Glass (زجاج ذكي)
+                        </option>
+                      </optgroup>
                     </select>
                   </div>
 

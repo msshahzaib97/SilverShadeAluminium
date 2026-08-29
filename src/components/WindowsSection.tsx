@@ -350,6 +350,155 @@ export const WindowsSection: React.FC<WindowsSectionProps> = ({ onOpenQuoteModal
           </motion.div>
         </AnimatePresence>
 
+        {/* Architectural Aluminium Systems & Curtain Wall Profiles Overview */}
+        <div className="mt-16 pt-12 border-t border-slate-200 dark:border-white/10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold uppercase tracking-widest mb-2">
+                <Layers className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                <span>Structural Profiles &amp; Glazing Standards</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-light text-slate-900 dark:text-white tracking-tight">
+                Architectural Aluminium &amp; <span className="text-emerald-700 dark:text-emerald-400 font-normal">Curtain Wall Systems</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-400 mt-1">
+                Precision extruded 6063-T6 alloy systems engineered for villas, high-rise elevations, and expansive glass envelopes in the UAE.
+              </p>
+            </div>
+            <button
+              onClick={() => onOpenQuoteModal('Luxury Villas & Facades')}
+              className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2 shrink-0 cursor-pointer shadow-md shadow-emerald-700/20"
+            >
+              <span>Get Profile Quotation</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* 10cm Aluminium Profile */}
+            <div className="p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between hover:border-emerald-500/50 transition-colors">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                    Profile 100mm
+                  </span>
+                  <span className="text-[10px] bg-slate-100 dark:bg-white/10 px-2 py-0.5 text-slate-700 dark:text-slate-300 font-semibold">
+                    Standard &amp; Heavy-Duty
+                  </span>
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 dark:text-white mb-1">
+                  10cm Aluminium System
+                </h4>
+                <div className="text-xs text-emerald-800 dark:text-emerald-300/90 font-arabic font-medium mb-3">
+                  قطاع ألمنيوم 10 سم (زجاج مفرد ودبل)
+                </div>
+                <ul className="space-y-2 text-xs text-slate-600 dark:text-gray-300 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>Single Glass:</strong> 6mm / 8mm / 10mm Toughened safety glazing for interior &amp; standard partitions.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>Double Glass:</strong> 6mm+12A+6mm Insulated Acoustic Low-E glass with hermetic thermal barrier.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Smooth sliding tracks with stainless steel tandem rollers and flush crescent locks.</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                onClick={() => onOpenQuoteModal('10cm Aluminium with Double Glass')}
+                className="w-full py-2 bg-slate-50 hover:bg-emerald-50 dark:bg-white/5 dark:hover:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 text-[11px] font-bold uppercase tracking-wider transition-colors text-center cursor-pointer"
+              >
+                Inquire 10cm Profile
+              </button>
+            </div>
+
+            {/* 10.5cm Aluminium Profile */}
+            <div className="p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between hover:border-emerald-500/50 transition-colors">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                    Profile 105mm
+                  </span>
+                  <span className="text-[10px] bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 px-2 py-0.5 font-semibold">
+                    Reinforced Architectural
+                  </span>
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 dark:text-white mb-1">
+                  10.5cm Aluminium System
+                </h4>
+                <div className="text-xs text-emerald-800 dark:text-emerald-300/90 font-arabic font-medium mb-3">
+                  قطاع ألمنيوم 10.5 سم (زجاج مفرد ودبل)
+                </div>
+                <ul className="space-y-2 text-xs text-slate-600 dark:text-gray-300 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>Single Glass:</strong> Deep pocket glazing with heavy rubber beading for wind resistance.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>Double Glass:</strong> 24mm high-performance DGU insulated glass for maximum cooling efficiency.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Extra wall thickness (2.0mm–2.2mm) designed for large-span villa sliding &amp; hinged apertures.</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                onClick={() => onOpenQuoteModal('10.5cm Aluminium with Double Glass')}
+                className="w-full py-2 bg-slate-50 hover:bg-emerald-50 dark:bg-white/5 dark:hover:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 text-[11px] font-bold uppercase tracking-wider transition-colors text-center cursor-pointer"
+              >
+                Inquire 10.5cm Profile
+              </button>
+            </div>
+
+            {/* Curtain Wall Systems 10x5 & 8x5 */}
+            <div className="p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between hover:border-emerald-500/50 transition-colors">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                    Facade Engineering
+                  </span>
+                  <span className="text-[10px] bg-slate-100 dark:bg-white/10 px-2 py-0.5 text-slate-700 dark:text-slate-300 font-semibold">
+                    10x5 &amp; 8x5 Grid
+                  </span>
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 dark:text-white mb-1">
+                  Curtain Wall Systems
+                </h4>
+                <div className="text-xs text-emerald-800 dark:text-emerald-300/90 font-arabic font-medium mb-3">
+                  كيرتن وول واجهات 10×5 و 8×5 سم
+                </div>
+                <ul className="space-y-2 text-xs text-slate-600 dark:text-gray-300 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>10x5 cm (100x50 mm):</strong> Heavy structural mullions for double-height facades &amp; showrooms.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>8x5 cm (80x50 mm):</strong> Versatile architectural grid for villa stairwells &amp; panoramic elevations.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Structural silicone glazing with Low-E reflective solar control double glass units.</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                onClick={() => onOpenQuoteModal('Curtain Wall 10x5 cm (100x50 mm)')}
+                className="w-full py-2 bg-slate-50 hover:bg-emerald-50 dark:bg-white/5 dark:hover:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 text-[11px] font-bold uppercase tracking-wider transition-colors text-center cursor-pointer"
+              >
+                Inquire Curtain Wall
+              </button>
+            </div>
+
+          </div>
+        </div>
+
         {/* 4 Feature Value Pillars for Silver Shade Windows */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           

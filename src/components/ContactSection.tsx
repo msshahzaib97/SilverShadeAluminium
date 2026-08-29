@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Phone, MessageCircle, Mail, Send, CheckCircle2, Clock, Sparkles } from 'lucide-react';
-import { COMPANY_CONFIG, SERVICES_DATA } from '../data/content';
+import { COMPANY_CONFIG, SERVICES_DATA, ALUMINIUM_SYSTEM_OPTIONS } from '../data/content';
 import { QuoteFormData } from '../types';
 
 export const ContactSection: React.FC = () => {
@@ -10,6 +10,7 @@ export const ContactSection: React.FC = () => {
     phone: '',
     email: '',
     serviceRequired: 'Luxury Villas & Facades',
+    systemSpecification: '10cm Aluminium with Double Glass',
     projectLocation: 'Abu Dhabi / Dubai',
     propertyType: 'villa',
     projectDetails: '',
@@ -35,6 +36,7 @@ export const ContactSection: React.FC = () => {
       `• Phone/WA: ${formData.phone || 'Provided via form'}\n` +
       `• Email: ${formData.email || 'Provided via form'}\n` +
       `• Service: ${formData.serviceRequired}\n` +
+      `• System / Glazing: ${formData.systemSpecification || '10cm Aluminium with Double Glass'}\n` +
       `• Property: ${formData.propertyType}\n` +
       `• Location: ${formData.projectLocation}\n` +
       `• Details: ${formData.projectDetails || 'Interested in consultation'}`
@@ -315,6 +317,54 @@ export const ContactSection: React.FC = () => {
                           ))}
                         </select>
                       </div>
+                    </div>
+
+                    {/* Row 2.5: Aluminium Profile & Curtain Wall System Specification */}
+                    <div>
+                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                        Aluminium Profile & Glazing System (قطاع الألمنيوم / الكيرتن وول)
+                      </label>
+                      <select
+                        value={formData.systemSpecification}
+                        onChange={(e) => setFormData({ ...formData, systemSpecification: e.target.value })}
+                        className="w-full px-4 py-3 bg-slate-50 dark:bg-black/80 border border-slate-200 dark:border-white/10 rounded-none text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:border-emerald-600 transition-colors"
+                      >
+                        <optgroup label="Aluminium Profile Systems (قطاعات ألمنيوم)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                          <option value="10cm Aluminium with Single Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            10cm Aluminium with Single Glass (ألمنيوم 10 سم زجاج مفرد)
+                          </option>
+                          <option value="10cm Aluminium with Double Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            10cm Aluminium with Double Glass (ألمنيوم 10 سم زجاج دبل)
+                          </option>
+                          <option value="10.5cm Aluminium with Single Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            10.5cm Aluminium with Single Glass (ألمنيوم 10.5 سم زجاج مفرد)
+                          </option>
+                          <option value="10.5cm Aluminium with Double Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            10.5cm Aluminium with Double Glass (ألمنيوم 10.5 سم زجاج دبل)
+                          </option>
+                        </optgroup>
+
+                        <optgroup label="Curtain Wall Systems (كيرتن وول واجهات)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                          <option value="Curtain Wall 10x5 cm (100x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            Curtain Wall 10x5 cm (100x50 mm) (كيرتن وول واجهات 10×5 سم)
+                          </option>
+                          <option value="Curtain Wall 8x5 cm (80x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            Curtain Wall 8x5 cm (80x50 mm) (كيرتن وول واجهات 8×5 سم)
+                          </option>
+                        </optgroup>
+
+                        <optgroup label="Architectural Glass & Balustrades (زجاج معماري وسيكوريت)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                          <option value="12mm Toughened Frameless Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            12mm Toughened Frameless Glass (زجاج سيكوريت 12 ملم)
+                          </option>
+                          <option value="SentryGlas Structural Laminated Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            SentryGlas Structural Laminated Glass (زجاج مصفح عالي الأمان)
+                          </option>
+                          <option value="Smart Switchable Privacy PDLC Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                            Smart Switchable Privacy PDLC Glass (زجاج ذكي)
+                          </option>
+                        </optgroup>
+                      </select>
                     </div>
 
                     {/* Row 3: Property Type & Project Location */}

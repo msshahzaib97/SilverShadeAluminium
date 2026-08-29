@@ -6,6 +6,7 @@ import { TrustStrip } from './components/TrustStrip';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { WindowsSection } from './components/WindowsSection';
+import { RailingsSection } from './components/RailingsSection';
 import { FeaturedProjects } from './components/FeaturedProjects';
 import { PremiumFeatureSection } from './components/PremiumFeatureSection';
 import { WhyChooseUsSection } from './components/WhyChooseUsSection';
@@ -64,6 +65,9 @@ export default function App() {
 
           {/* Architectural Windows Systems Showcase (Wood-Grain Awning, Sliding Transoms, Grid Panoramic, Exhaust Windows) */}
           <WindowsSection onOpenQuoteModal={handleOpenQuoteModal} />
+
+          {/* Architectural Railings & Glass Balustrades (Frameless Glass, Black Picket, Floating Stairs, Outdoor Ramps) */}
+          <RailingsSection onOpenQuoteModal={handleOpenQuoteModal} />
 
           {/* Featured Projects Portfolio */}
           <FeaturedProjects onOpenQuoteModal={handleOpenQuoteModal} />
