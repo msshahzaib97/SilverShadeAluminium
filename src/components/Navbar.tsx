@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Menu, X, ArrowUpRight, MessageCircle, Globe } from 'lucide-react';
 import { COMPANY_CONFIG } from '../data/content';
+import { useLanguage } from '../context/LanguageContext';
+import { LanguageDropdown } from './LanguageDropdown';
 
 interface NavbarProps {
   onOpenQuoteModal: (service?: string) => void;
@@ -10,6 +12,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, openLanguageModal, currentLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,16 +23,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Windows', href: '#windows-showcase' },
-    { name: 'Majlis', href: '#majlis-showcase' },
-    { name: 'Railings', href: '#railings-showcase' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Why Us', href: '#why-us' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav_home', 'Home'), href: '#home' },
+    { name: t('nav_about', 'About'), href: '#about' },
+    { name: t('nav_services', 'Services'), href: '#services' },
+    { name: t('nav_windows', 'Windows'), href: '#windows-showcase' },
+    { name: t('nav_majlis', 'Majlis'), href: '#majlis-showcase' },
+    { name: t('nav_tents', 'Tents (خيام)'), href: '#kuwaiti-tent-showcase' },
+    { name: t('nav_railings', 'Railings'), href: '#railings-showcase' },
+    { name: t('nav_projects', 'Projects'), href: '#projects' },
+    { name: t('nav_why_us', 'Why Us'), href: '#why-us' },
+    { name: t('nav_faq', 'FAQ'), href: '#faq' },
+    { name: t('nav_contact', 'Contact'), href: '#contact' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -78,28 +82,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-slate-300">
-            {navLinks.map((link) => (
+          <nav className="hidden xl:flex items-center gap-6 text-[11px] font-semibold uppercase tracking-widest text-slate-300">
+            {navLinks.map((link, idx) => (
               <button
-                key={link.name}
-                id={`nav-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                key={idx}
+                id={`nav-link-${idx}`}
                 onClick={() => handleNavClick(link.href)}
-                className="hover:text-emerald-400 transition-colors cursor-pointer py-1 relative hover:opacity-100"
+                className="hover:text-emerald-400 transition-colors cursor-pointer py-1 relative hover:opacity-100 whitespace-nowrap"
               >
                 {link.name}
               </button>
             ))}
           </nav>
 
-          {/* Right CTAs: Quote Button, WhatsApp */}
-          <div className="hidden sm:flex items-center gap-4">
+          {/* Right CTAs: Language Dropdown, Quote Button, WhatsApp */}
+          <div className="hidden sm:flex items-center gap-3.5">
+            {/* Language Switcher Dropdown */}
+            <LanguageDropdown />
+
             {/* Free Quote CTA */}
             <button
               id="header-quote-cta"
               onClick={() => onOpenQuoteModal()}
-              className="bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/40 px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all cursor-pointer backdrop-blur-sm shadow-md shadow-emerald-600/20"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/40 px-4 sm:px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all cursor-pointer backdrop-blur-sm shadow-md shadow-emerald-600/20 whitespace-nowrap"
             >
-              Get a Free Quote
+              {t('btn_free_quote', 'Get a Free Quote')}
             </button>
 
             {/* WhatsApp Quick Icon */}
@@ -107,14 +114,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               id="header-whatsapp-btn"
               onClick={handleWhatsAppClick}
               title="Chat on WhatsApp"
-              className="w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center cursor-pointer shadow-md shadow-emerald-700/30 border border-emerald-400/40 transition-all hover:scale-105 active:scale-95 text-white"
+              className="w-9 h-9 rounded-full bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center cursor-pointer shadow-md shadow-emerald-700/30 border border-emerald-400/40 transition-all hover:scale-105 active:scale-95 text-white shrink-0"
             >
               <MessageCircle className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Mobile Actions (Menu Toggle & WhatsApp) */}
-          <div className="flex sm:hidden items-center gap-2.5">
+          {/* Mobile Actions (Language Switcher, WhatsApp & Menu Toggle) */}
+          <div className="flex sm:hidden items-center gap-2">
+            <LanguageDropdown isMobile />
+            
             <button
               id="mobile-whatsapp-btn"
               onClick={handleWhatsAppClick}
@@ -144,37 +153,58 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-[64px] z-40 bg-white/95 dark:bg-[#060a08]/95 backdrop-blur-2xl border-t border-emerald-900/10 dark:border-white/10 p-6 flex flex-col justify-between overflow-y-auto lg:hidden"
+            className="fixed inset-0 top-[64px] z-40 bg-[#060a08]/98 backdrop-blur-2xl border-t border-white/10 p-6 flex flex-col justify-between overflow-y-auto lg:hidden text-white"
           >
-            <div className="space-y-4 pt-4">
-              <div className="text-[10px] tracking-[0.4em] text-emerald-700 dark:text-emerald-400 uppercase pb-2 border-b border-emerald-900/10 dark:border-white/10 font-bold">
+            <div className="space-y-4 pt-2">
+              {/* Language Switcher in Mobile Drawer */}
+              <div className="p-3 bg-emerald-950/40 border border-emerald-500/25 rounded-xl flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">{currentLanguage.flag}</span>
+                  <div>
+                    <span className="text-xs font-bold text-white block">{currentLanguage.nativeName}</span>
+                    <span className="text-[10px] text-emerald-400">({currentLanguage.name})</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openLanguageModal();
+                  }}
+                  className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-semibold flex items-center gap-1"
+                >
+                  <Globe className="w-3 h-3" />
+                  <span>Change</span>
+                </button>
+              </div>
+
+              <div className="text-[10px] tracking-[0.4em] text-emerald-400 uppercase pb-2 border-b border-white/10 font-bold">
                 Navigation
               </div>
-              <div className="flex flex-col space-y-3">
-                {navLinks.map((link) => (
+              <div className="flex flex-col space-y-2">
+                {navLinks.map((link, idx) => (
                   <button
-                    key={link.name}
-                    id={`mobile-nav-${link.name.toLowerCase()}`}
+                    key={idx}
+                    id={`mobile-nav-${idx}`}
                     onClick={() => handleNavClick(link.href)}
-                    className="text-left text-base font-medium tracking-wider text-slate-800 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 py-2 border-b border-emerald-900/5 dark:border-white/5 transition-colors flex items-center justify-between uppercase"
+                    className="text-left text-sm font-medium tracking-wider text-slate-200 hover:text-emerald-400 py-2 border-b border-white/5 transition-colors flex items-center justify-between uppercase"
                   >
                     <span>{link.name}</span>
-                    <ArrowUpRight className="w-4 h-4 text-emerald-600/60 dark:text-gray-500" />
+                    <ArrowUpRight className="w-4 h-4 text-emerald-400" />
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="space-y-3 pt-6 pb-6 border-t border-emerald-900/10 dark:border-white/10">
+            <div className="space-y-3 pt-6 pb-6 border-t border-white/10">
               <button
                 id="mobile-quote-cta"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenQuoteModal();
                 }}
-                className="w-full py-3.5 bg-emerald-600 text-white dark:bg-white dark:text-black text-center text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-md"
+                className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-center text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-md rounded-xl"
               >
-                <span>Get a Free Quote</span>
+                <span>{t('btn_free_quote', 'Get a Free Quote')}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
 
@@ -184,13 +214,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
                   setMobileMenuOpen(false);
                   handleWhatsAppClick();
                 }}
-                className="w-full py-3 bg-emerald-50 dark:bg-emerald-600/30 border border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-center text-xs uppercase tracking-widest font-semibold backdrop-blur-md flex items-center justify-center gap-2"
+                className="w-full py-3 bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-900 text-center text-xs uppercase tracking-widest font-semibold backdrop-blur-md flex items-center justify-center gap-2 rounded-xl"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                <span>Chat on WhatsApp</span>
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <span>{t('btn_chat_whatsapp', 'Chat on WhatsApp')}</span>
               </button>
 
-              <div className="text-center pt-2 text-[11px] text-slate-500 dark:text-gray-400">
+              <div className="text-center pt-2 text-[11px] text-slate-400">
                 {COMPANY_CONFIG.location} • {COMPANY_CONFIG.email}
               </div>
             </div>

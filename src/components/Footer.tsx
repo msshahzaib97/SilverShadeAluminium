@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowUpRight, MapPin, Phone, Mail, MessageCircle, X } from 'lucide-react';
+import { ArrowUpRight, MapPin, Phone, Mail, MessageCircle, X, Globe } from 'lucide-react';
 import { COMPANY_CONFIG } from '../data/content';
+import { useLanguage } from '../context/LanguageContext';
 
 interface FooterProps {
   onOpenQuoteModal: (service?: string) => void;
@@ -9,18 +10,24 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
   const [activeLegalModal, setActiveLegalModal] = useState<'privacy' | 'terms' | null>(null);
+  const { currentLanguage, setLanguage, openLanguageModal } = useLanguage();
 
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Tents (خيام)', href: '#kuwaiti-tent-showcase' },
+    { name: 'Majlis', href: '#majlis-showcase' },
+    { name: 'Windows', href: '#windows-showcase' },
+    { name: 'Doors', href: '#doors-showcase' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Why Us', href: '#why-us' },
+    { name: 'HTML Sitemap', href: '#html-sitemap' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' },
   ];
 
   const serviceList = [
+    'Kuwaiti Winter Tents (خيمة شتاء سيف حديد كويتي)',
     'Tabuk & Qarmeed Majlis (مجلس طابوق)',
     '10cm & 10.5cm Aluminium Windows',
     'Sliding & French Hinge Doors',
@@ -28,7 +35,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
     'Aluminium Kitchen Cabinets',
     'Frameless Glass Balustrades & Railings',
     'Car Parking Shades & Pergolas',
-    'Labour & Royal Luxury Tents',
   ];
 
   const scrollTo = (href: string) => {
@@ -163,6 +169,73 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </div>
           </div>
 
+          {/* Multi-Language Quick Selector in Footer */}
+          <div className="py-6 border-b border-emerald-950/80 dark:border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs">
+            <div className="flex items-center gap-2 text-slate-300">
+              <Globe className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className="font-semibold text-white">Language / اللغة / زبان:</span>
+              <span className="text-slate-400">Select your preferred language to translate the whole website</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                  currentLanguage.code === 'en'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10'
+                }`}
+              >
+                🇬🇧 English
+              </button>
+              <button
+                onClick={() => setLanguage('ar')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all font-arabic ${
+                  currentLanguage.code === 'ar'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10'
+                }`}
+              >
+                🇦🇪 العربية
+              </button>
+              <button
+                onClick={() => setLanguage('ur')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all font-arabic ${
+                  currentLanguage.code === 'ur'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10'
+                }`}
+              >
+                🇵🇰 اردو
+              </button>
+              <button
+                onClick={() => setLanguage('hi')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                  currentLanguage.code === 'hi'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10'
+                }`}
+              >
+                🇮🇳 हिन्दी
+              </button>
+              <button
+                onClick={() => setLanguage('ru')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                  currentLanguage.code === 'ru'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10'
+                }`}
+              >
+                🇷🇺 Русский
+              </button>
+              <button
+                onClick={openLanguageModal}
+                className="px-2.5 py-1 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/25 text-xs font-semibold transition-all flex items-center gap-1"
+              >
+                <span>More (18+)...</span>
+              </button>
+            </div>
+          </div>
+
           {/* Bottom Bar */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
             <div>
@@ -170,6 +243,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </div>
 
             <div className="flex items-center gap-6">
+              <a
+                href="#html-sitemap"
+                className="hover:text-emerald-400 text-emerald-400/90 font-medium transition-colors"
+              >
+                HTML Sitemap
+              </a>
               <button
                 onClick={() => setActiveLegalModal('privacy')}
                 className="hover:text-emerald-400 transition-colors cursor-pointer"

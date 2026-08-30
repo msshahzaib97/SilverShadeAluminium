@@ -411,24 +411,24 @@ export const SERVICES_DATA: ServiceItem[] = [
     ]
   },
   {
-    id: "winter-tents",
+    id: "winter-tents-kuwaiti",
     number: "13",
-    name: "Winter Tents (خيمه شتاء وجلسات)",
-    shortDesc: "Cozy winter seasonal tents, desert camp pavilions, and weather-resistant outdoor majlis gazebos (خيمه شتاء).",
-    fullDesc: "Authentic Arabian winter tents (خيمة شتاء) and outdoor seasonal sitting pavilions engineered for winter gatherings, desert retreats, and villa courtyards. Features heavy insulated weather-resistant canvas, traditional interior warm patterns, central fire pit / wood burner chimney exhaust provisions, and zip-down clear PVC storm windows.",
-    image: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=85",
+    name: "Kuwaiti Winter Steel & Glass Tents (خيمه شتاء سيف حديد شكل كويتي)",
+    shortDesc: "Luxury Kuwaiti-style winter tents with heavy sword steel frame, insulated fabric roof, decorative valance trim, and 360° sliding glass walls.",
+    fullDesc: "Authentic Kuwaiti-style winter tents (خيمة شتاء سيف حديد شكل كويتي) engineered for private villa gardens, rooftops, and desert estates across the UAE. Built with structural galvanized steel sword arches ('Saif Hadid'), multi-layer thermal PVC canvas roofs with traditional crescent/calligraphy valance fringe, and 10cm panoramic aluminium sliding glass doors with warm ambient 3000K LED illumination.",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
     category: "Tents & Majlis",
     specs: [
-      { label: "Canvas Grade", value: "Heavy-Duty Multi-Layer Weatherproof Ripstop Canvas" },
-      { label: "Frame", value: "Galvanized High-Tensile Steel Tube / Modular Aluminium" },
-      { label: "Ventilation", value: "Integrated Chimney Flue Ports & Bug-Proof Mesh Windows" },
-      { label: "Protection", value: "100% Rainproof, Wind-Resistant & Desert Sand Tight" }
+      { label: "Steel Framework", value: "Structural Heavy Steel Sword Profile (حديد سيف كويتي مقوى)" },
+      { label: "Roof System", value: "850 GSM Insulated Weatherproof German PVC Canvas" },
+      { label: "Glass Enclosure", value: "10cm Heavy Aluminium Sliding Glass Walls with Safety Glazing" },
+      { label: "Heritage Trim", value: "Traditional Kuwaiti Crescent / Arabic Calligraphy Valance Fringe" }
     ],
     features: [
-      "Traditional Arabic Sadu interior designs paired with modern thermal comfort",
-      "Detachable clear transparent sides for scenic garden or desert views",
-      "Safe provisions for central heating stoves, BBQ grills, and Arabic coffee stations",
-      "Quick seasonal setup and storage service available across Abu Dhabi & UAE"
+      "Heavy steel structure engineered for rooftop and courtyard wind resistance up to 140 km/h",
+      "Full sliding glass doors with smooth tandem rollers for seamless garden connectivity",
+      "Thermal insulated ceiling maintaining warm cozy indoor temperatures during cool winter nights",
+      "Provisions for split AC cooling, hidden wiring, and warm architectural LED wall sconces"
     ]
   },
   {

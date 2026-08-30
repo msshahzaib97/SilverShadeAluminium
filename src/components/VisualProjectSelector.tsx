@@ -37,11 +37,16 @@ import majlisArchImg from '../assets/images/majlis_arch_windows_1788068799568.jp
 import majlisGardenImg from '../assets/images/majlis_modern_garden_1788068918527.jpg';
 import majlisStoneImg from '../assets/images/majlis_qarmeed_stone_1788068900043.jpg';
 
+import tentNightImg from '../assets/images/tent_kuwaiti_night_1788114059718.jpg';
+import tentGardenImg from '../assets/images/tent_kuwaiti_garden_1788114093298.jpg';
+import tentTerraceImg from '../assets/images/tent_kuwaiti_terrace_1788114118445.jpg';
+import tentEveningImg from '../assets/images/tent_kuwaiti_evening_1788114138136.jpg';
+
 import { COMPANY_CONFIG } from '../data/content';
 
 interface VisualItem {
   id: string;
-  category: 'majlis' | 'windows' | 'doors' | 'curtain_wall' | 'kitchens' | 'railings';
+  category: 'tents' | 'majlis' | 'windows' | 'doors' | 'curtain_wall' | 'kitchens' | 'railings';
   title: string;
   arabicTitle: string;
   image: string;
@@ -51,6 +56,47 @@ interface VisualItem {
 }
 
 const VISUAL_CATALOGUE: VisualItem[] = [
+  // Kuwaiti Winter Tents (خيام شتوية شكل كويتي)
+  {
+    id: 'tent-night-luxury',
+    category: 'tents',
+    title: 'Kuwaiti Winter Tent with Steel Sword & Sliding Glass',
+    arabicTitle: 'خيمة شتاء سيف حديد شكل كويتي مع زجاج سلايدنج',
+    image: tentNightImg,
+    tag: 'Trending Winter 2026',
+    description: 'Heavy steel sword structure, traditional scalloped valance fringe, and warm 3000K ambient LED lights.',
+    serviceKey: 'Kuwaiti Winter Glass Tent (خيمة شتاء سيف حديد كويتي)'
+  },
+  {
+    id: 'tent-garden-lawn',
+    category: 'tents',
+    title: 'Villa Garden Kuwaiti Tent with Solar Glass',
+    arabicTitle: 'خيمة حديقة شتوية مودرن شكل كويتي مع زجاج عاكس',
+    image: tentGardenImg,
+    tag: 'Private Villa Garden',
+    description: 'Tensile waterproof fabric roof with solar control reflective sliding glass panels.',
+    serviceKey: 'Kuwaiti Winter Glass Tent (خيمة شتاء سيف حديد كويتي)'
+  },
+  {
+    id: 'tent-rooftop-calligraphy',
+    category: 'tents',
+    title: 'Rooftop Kuwaiti Tent with Arabic Calligraphy Trim',
+    arabicTitle: 'خيمة شتوية للسطح والروف بزخرفة خط عربي وهيكل حديد',
+    image: tentTerraceImg,
+    tag: 'Rooftop Majlis',
+    description: 'High wind-load engineered steel base with traditional Arabic calligraphy valance border.',
+    serviceKey: 'Kuwaiti Winter Glass Tent (خيمة شتاء سيف حديد كويتي)'
+  },
+  {
+    id: 'tent-evening-canopy',
+    category: 'tents',
+    title: 'Royal Winter Tent with Extended Porch Canopy',
+    arabicTitle: 'خيمة شتوية ملكية مع مدخل مظلة قماشية وستائر جانبية',
+    image: tentEveningImg,
+    tag: 'VIP Hospitality',
+    description: 'Full glass sliding facade with projecting fabric entrance canopy and glowing ambient sconces.',
+    serviceKey: 'Kuwaiti Winter Glass Tent (خيمة شتاء سيف حديد كويتي)'
+  },
   // Majlis Tabuk & Qarmeed
   {
     id: 'majlis-sunset',
@@ -278,8 +324,8 @@ interface VisualProjectSelectorProps {
 }
 
 export const VisualProjectSelector: React.FC<VisualProjectSelectorProps> = ({ onOpenQuoteModal }) => {
-  const [activeCategory, setActiveCategory] = useState<'all' | 'majlis' | 'windows' | 'doors' | 'curtain_wall' | 'kitchens' | 'railings'>('all');
-  const [selectedItems, setSelectedItems] = useState<string[]>(['majlis-sunset']);
+  const [activeCategory, setActiveCategory] = useState<'all' | 'tents' | 'majlis' | 'windows' | 'doors' | 'curtain_wall' | 'kitchens' | 'railings'>('all');
+  const [selectedItems, setSelectedItems] = useState<string[]>(['tent-night-luxury']);
   const [clientCity, setClientCity] = useState<string>('Dubai');
   const [clientName, setClientName] = useState<string>('');
   const [clientPhone, setClientPhone] = useState<string>('');
@@ -287,6 +333,7 @@ export const VisualProjectSelector: React.FC<VisualProjectSelectorProps> = ({ on
 
   const categories = [
     { id: 'all', label: 'All Pictures (الكل)', icon: '🌟' },
+    { id: 'tents', label: 'Kuwaiti Tents (خيام شتوية)', icon: '⛺' },
     { id: 'majlis', label: 'Majlis & Qarmeed (مجلس وقرميد)', icon: '🏛️' },
     { id: 'windows', label: 'Windows (نوافذ)', icon: '🪟' },
     { id: 'doors', label: 'Doors (أبواب)', icon: '🚪' },
