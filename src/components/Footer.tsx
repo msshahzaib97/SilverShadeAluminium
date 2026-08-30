@@ -21,15 +21,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
   ];
 
   const serviceList = [
-    'Aluminium Doors',
-    'Glass Doors',
-    'Aluminium Windows',
-    'Sliding Systems',
-    'Glass Partitions',
-    'Wardrobes',
-    'Facades',
-    'Pergolas',
-    'Railings',
+    'Tabuk & Qarmeed Majlis (مجلس طابوق)',
+    '10cm & 10.5cm Aluminium Windows',
+    'Sliding & French Hinge Doors',
+    'Curtain Wall 10/5 & 8/5 Facades',
+    'Aluminium Kitchen Cabinets',
+    'Frameless Glass Balustrades & Railings',
+    'Car Parking Shades & Pergolas',
+    'Labour & Royal Luxury Tents',
   ];
 
   const scrollTo = (href: string) => {
@@ -148,10 +147,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
 
           </div>
 
+          {/* UAE Regional Coverage & Local SEO Keywords */}
+          <div className="py-6 border-b border-emerald-950/80 dark:border-white/10 text-[11px] text-slate-400">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 leading-relaxed">
+              <span className="font-semibold text-emerald-400 uppercase tracking-wider">Service Areas &amp; Fast Site Visits:</span>
+              <span className="text-slate-300">Musaffah Industrial</span> • 
+              <span className="text-slate-300">Abu Dhabi City</span> • 
+              <span className="text-slate-300">Khalifa City</span> • 
+              <span className="text-slate-300">Mohammed Bin Zayed City (MBZ)</span> • 
+              <span className="text-slate-300">Saadiyat &amp; Yas Island</span> • 
+              <span className="text-slate-300">Al Ain</span> • 
+              <span className="text-slate-300">Dubai (Palm Jumeirah, Dubai Hills, Emirates Hills)</span> • 
+              <span className="text-slate-300">Sharjah</span> • 
+              <span className="text-slate-300">Ajman &amp; Northern Emirates</span>
+            </div>
+          </div>
+
           {/* Bottom Bar */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
             <div>
-              &copy; 2026 Silver Shade Aluminium. All Rights Reserved. Musaffah, Abu Dhabi, UAE.
+              &copy; 2026 Silver Shade Aluminium &amp; Glass Works LLC. All Rights Reserved. Musaffah, Abu Dhabi, UAE.
             </div>
 
             <div className="flex items-center gap-6">

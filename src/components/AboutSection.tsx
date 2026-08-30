@@ -81,19 +81,19 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenQuoteModal }) 
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-10 bg-emerald-600 dark:bg-emerald-400"></div>
               <span className="text-[10px] sm:text-xs font-bold tracking-[0.35em] text-emerald-700 dark:text-emerald-400 uppercase">
-                ABOUT SILVER SHADE
+                ABOUT SILVER SHADE ALUMINIUM &amp; GLASS UAE
               </span>
             </div>
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
-              Where Aluminium Meets <br />
-              <span className="text-emerald-700 dark:text-emerald-400 font-medium">Modern Architecture</span>
+              Precision Engineering for <br />
+              <span className="text-emerald-700 dark:text-emerald-400 font-medium">UAE Luxury Architecture</span>
             </h2>
 
             {/* Paragraph */}
             <p className="text-sm sm:text-base text-slate-600 dark:text-gray-300 leading-relaxed mb-8 font-normal">
-              Silver Shade Aluminium delivers premium aluminium and glass solutions for contemporary residential and commercial spaces across Dubai. From elegant glass doors and modern aluminium windows to custom wardrobes, partitions and architectural installations, we combine precision engineering, modern design and professional craftsmanship to create solutions that look exceptional and perform for years.
+              Based with comprehensive fabrication facilities in Musaffah, Abu Dhabi and executing luxury projects across Dubai and the UAE, Silver Shade Aluminium is a trusted contractor for architectural aluminium and glass systems. We specialize in turnkey Tabuk Majlis (مجلس طابوق وقرميد) with Spanish terracotta clay roofs, 10cm / 10.5cm heavy sliding glass doors, structural Curtain Wall 10/5 facades, frameless balustrades, and modern glass kitchen cabinetry engineered for climate resilience.
             </p>
 
             {/* Frosted Pillar Cards */}

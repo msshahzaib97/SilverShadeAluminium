@@ -33,7 +33,7 @@ export const FaqSection: React.FC = () => {
             Clear Answers to Your <span className="text-emerald-700 dark:text-emerald-400 font-normal">Inquiries</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-gray-400 font-normal leading-relaxed max-w-xl mx-auto">
-            Everything you need to know about our custom engineering, thermal specifications, and Dubai installation process.
+            Everything you need to know about our custom engineering, thermal specifications, Tabuk Majlis, and Abu Dhabi &amp; Dubai installation process.
           </p>
         </div>
 

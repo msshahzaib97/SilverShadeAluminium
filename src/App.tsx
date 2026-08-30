@@ -7,6 +7,7 @@ import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { WindowsSection } from './components/WindowsSection';
 import { DoorsSection } from './components/DoorsSection';
+import { MajlisTabukSection } from './components/MajlisTabukSection';
 import { KitchenCabinetSection } from './components/KitchenCabinetSection';
 import { RailingsSection } from './components/RailingsSection';
 import { FeaturedProjects } from './components/FeaturedProjects';
@@ -70,6 +71,9 @@ export default function App() {
 
           {/* Architectural Doors Systems Showcase (Hinge Doors Single/Double, Sliding Doors Single/Double, Frameless Glass Doors) */}
           <DoorsSection onOpenQuoteModal={handleOpenQuoteModal} />
+
+          {/* Tabuk Majlis & Qarmeed Clay Tile Roofs Showcase (مجلس طابوق وقرميد وزجاج فاخر) */}
+          <MajlisTabukSection onOpenQuoteModal={handleOpenQuoteModal} />
 
           {/* Aluminium Kitchen Cabinets Showcase (Single Piece & Double Piece Glass Shutter Options) */}
           <KitchenCabinetSection onOpenQuoteModal={handleOpenQuoteModal} />

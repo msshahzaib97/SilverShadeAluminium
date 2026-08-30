@@ -738,33 +738,43 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
 
 export const FAQ_DATA: FaqItem[] = [
   {
-    id: "faq-1",
-    question: "Do you provide custom aluminium designs?",
-    answer: "Yes. Every aluminium and glass solution is custom-engineered to your exact architectural drawings, opening dimensions, preferred profile colors (anodized, powder coated RAL), and performance specifications."
+    id: "faq-majlis-qarmeed",
+    question: "How do Spanish Qarmeed (قراميد) and Tabuk Majlis perform against UAE summer heat?",
+    answer: "Our Tabuk Majlis annexes feature high-density thermal insulated blockwork combined with authentic Spanish clay Qarmeed roofing, rockwool insulation layers, and bituminous heat shields. This specialized thermal barrier reflects intense solar radiation and keeps indoor salon temperatures up to 8–10°C cooler, substantially reducing AC electricity consumption in Abu Dhabi, Dubai, and Al Ain."
   },
   {
-    id: "faq-2",
-    question: "Do you provide installation?",
-    answer: "Yes, our in-house certified engineering and installation teams manage the complete process — from site laser survey and structural sub-frame preparation to final glazing, sealing, and testing."
+    id: "faq-profile-differences",
+    question: "What is the difference between 10cm, 10.37cm, and 10.5cm aluminium profiles?",
+    answer: "The 10cm (100mm) profile is the standard heavy architectural extrusion for residential windows and interior partitions; the 10.37cm (103.7mm) series features deeper structural chambers for oversized sliding glass sashes; and the 10.5cm (105mm) reinforced heavy profile is engineered for wide-span villa sliding patio doors accommodating up to 24mm acoustic double glazed Low-E units with maximum wind load resistance."
   },
   {
-    id: "faq-3",
-    question: "Can I request a quotation?",
-    answer: "Yes. You can contact Silver Shade Aluminium through WhatsApp, telephone, or our website quotation form. Simply share your project drawings or approximate dimensions, and we will prepare a detailed technical estimate."
+    id: "faq-curtain-wall",
+    question: "What are Curtain Wall 10/5 (10x5 cm) and 8/5 (8x5 cm) structural glass facades?",
+    answer: "Curtain Wall 10/5 (100mm mullion depth x 50mm face width) is designed for multi-story glass facades and tall double-height villa atriums requiring superior structural wind-load inertia. Curtain Wall 8/5 (80mm x 50mm) is a lighter profile ideal for ground-floor villa entrance facades, showroom glass storefronts, and commercial mezzanine glazing."
   },
   {
-    id: "faq-4",
-    question: "Do you work on residential and commercial projects?",
-    answer: "Yes, Silver Shade Aluminium delivers solutions for private luxury villas, penthouses, high-end commercial offices, luxury retail stores, hospitality developments, and residential towers across the UAE."
+    id: "faq-kitchen-cabinets",
+    question: "Why choose aluminium kitchen cabinets with glass shutters over traditional wood?",
+    answer: "Aluminium kitchen cabinets are 100% moisture-proof, termite-proof, fire-resistant, and will never warp or swell in the UAE's coastal humidity. Combined with our single-piece or double-piece tempered glass shutters (frosted, fluted, smoked, or tinted), they provide an ultra-hygienic, easy-to-clean modern aesthetic that lasts decades."
   },
   {
-    id: "faq-5",
-    question: "Which areas do you serve?",
-    answer: "We primarily serve Dubai (including Palm Jumeirah, Emirates Hills, Dubai Hills Estate, Downtown Dubai, Jumeirah, Al Barari, Arabian Ranches, DIFC, and Business Bay) as well as Abu Dhabi, Sharjah, and other emirates across the UAE."
+    id: "faq-site-visit",
+    question: "Do you offer free on-site measurements and CAD shop drawings across the UAE?",
+    answer: "Yes. Our senior site engineers provide free on-site laser surveys, opening inspections, and CAD shop drawing proposals across Abu Dhabi, Musaffah, Dubai, Al Ain, Sharjah, Ajman, and Ras Al Khaimah with no obligation."
   },
   {
-    id: "faq-6",
-    question: "How do your aluminium and glass systems perform in Dubai's summer climate?",
-    answer: "Our systems utilize certified thermal-break aluminium extrusions and double/triple glazed Low-E acoustic solar control glass. This minimizes heat transfer, prevents condensation, significantly lowers cooling energy costs, and blocks UV damage to interiors."
+    id: "faq-custom-designs",
+    question: "Can you fabricate custom curved arches, French hinge doors, and minimal sliding systems?",
+    answer: "Yes, our Musaffah manufacturing facility is equipped with precision CNC routing, automatic double-head mitre saws, and roll-bending machinery for handcrafted circular and pointed arched windows, classic French double doors, and ultra-slim minimalist sliding systems."
+  },
+  {
+    id: "faq-warranty-standards",
+    question: "What warranties and standards do you provide on aluminium and glass works?",
+    answer: "We provide a 10-Year Warranty on structural aluminium profiles and Qualicoat powder-coating / anodizing finishes, a 5-Year Warranty on insulated double-glazed seal integrity, and genuine European hardware from certified brands (Giesse, Savio, Kinlong, Dorma) complying with UAE Civil Defense regulations."
+  },
+  {
+    id: "faq-quote-turnaround",
+    question: "How quickly can I receive a quotation for my villa or commercial project?",
+    answer: "You can send your architectural drawings or opening dimensions via our 24/7 WhatsApp hotline (+971 52 335 2536) or website quote form to receive an itemized technical estimate within 2 to 4 business hours."
   }
 ];
