@@ -19,6 +19,7 @@ import woodAwningImg from '../assets/images/window_wood_awning_1787905048945.jpg
 import blackSlidingImg from '../assets/images/window_black_sliding_1787905064205.jpg';
 import panoramicGridImg from '../assets/images/window_panoramic_grid_1787905085926.jpg';
 import exhaustVentImg from '../assets/images/window_exhaust_vent_1787905111213.jpg';
+import curtainWallImg from '../assets/images/curtain_wall_facade_1788067488682.jpg';
 import { COMPANY_CONFIG } from '../data/content';
 
 interface WindowsSectionProps {
@@ -374,14 +375,15 @@ export const WindowsSection: React.FC<WindowsSectionProps> = ({ onOpenQuoteModal
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Aluminium Profile Systems Grid (10cm, 10.37cm, 10.5cm) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             
             {/* 10cm Aluminium Profile */}
             <div className="p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between hover:border-emerald-500/50 transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
-                    Profile 100mm
+                    Profile 100mm (10cm)
                   </span>
                   <span className="text-[10px] bg-slate-100 dark:bg-white/10 px-2 py-0.5 text-slate-700 dark:text-slate-300 font-semibold">
                     Standard &amp; Heavy-Duty
@@ -416,15 +418,58 @@ export const WindowsSection: React.FC<WindowsSectionProps> = ({ onOpenQuoteModal
               </button>
             </div>
 
+            {/* 10.37cm Aluminium Profile */}
+            <div className="p-6 bg-white dark:bg-white/[0.03] border-2 border-emerald-600/60 dark:border-emerald-500/50 relative overflow-hidden flex flex-col justify-between hover:border-emerald-600 dark:hover:border-emerald-400 transition-colors shadow-sm">
+              <div className="absolute top-0 right-0 px-2.5 py-0.5 bg-emerald-600 text-white text-[9px] font-bold uppercase tracking-wider font-mono">
+                Requested Profile
+              </div>
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                    Profile 103.7mm (10.37cm)
+                  </span>
+                  <span className="text-[10px] bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 px-2 py-0.5 font-semibold">
+                    Structural Precision
+                  </span>
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 dark:text-white mb-1">
+                  10.37 Aluminium System
+                </h4>
+                <div className="text-xs text-emerald-800 dark:text-emerald-300/90 font-arabic font-medium mb-3">
+                  قطاع ألمنيوم 10.37 سم (زجاج مفرد ودبل)
+                </div>
+                <ul className="space-y-2 text-xs text-slate-600 dark:text-gray-300 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>Single Glass:</strong> 8mm / 10mm Tempered safety glass with reinforced structural gaskets.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span><strong>Double Glass:</strong> 20mm–24mm DGU thermal acoustic insulating glass with argon gas filling.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Optimized 10.37cm frame depth for superior deflection resistance in expansive villa spans.</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                onClick={() => onOpenQuoteModal('10.37 Aluminium with Double Glass')}
+                className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold uppercase tracking-wider transition-colors text-center cursor-pointer shadow-sm"
+              >
+                Inquire 10.37 Profile
+              </button>
+            </div>
+
             {/* 10.5cm Aluminium Profile */}
             <div className="p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between hover:border-emerald-500/50 transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
-                    Profile 105mm
+                    Profile 105mm (10.5cm)
                   </span>
-                  <span className="text-[10px] bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 px-2 py-0.5 font-semibold">
-                    Reinforced Architectural
+                  <span className="text-[10px] bg-slate-100 dark:bg-white/10 px-2 py-0.5 text-slate-700 dark:text-slate-300 font-semibold">
+                    Heavy Architectural
                   </span>
                 </div>
                 <h4 className="text-lg font-medium text-slate-900 dark:text-white mb-1">
@@ -456,46 +501,125 @@ export const WindowsSection: React.FC<WindowsSectionProps> = ({ onOpenQuoteModal
               </button>
             </div>
 
-            {/* Curtain Wall Systems 10x5 & 8x5 */}
-            <div className="p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between hover:border-emerald-500/50 transition-colors">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
-                    Facade Engineering
-                  </span>
-                  <span className="text-[10px] bg-slate-100 dark:bg-white/10 px-2 py-0.5 text-slate-700 dark:text-slate-300 font-semibold">
-                    10x5 &amp; 8x5 Grid
-                  </span>
-                </div>
-                <h4 className="text-lg font-medium text-slate-900 dark:text-white mb-1">
-                  Curtain Wall Systems
-                </h4>
-                <div className="text-xs text-emerald-800 dark:text-emerald-300/90 font-arabic font-medium mb-3">
-                  كيرتن وول واجهات 10×5 و 8×5 سم
-                </div>
-                <ul className="space-y-2 text-xs text-slate-600 dark:text-gray-300 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                    <span><strong>10x5 cm (100x50 mm):</strong> Heavy structural mullions for double-height facades &amp; showrooms.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                    <span><strong>8x5 cm (80x50 mm):</strong> Versatile architectural grid for villa stairwells &amp; panoramic elevations.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                    <span>Structural silicone glazing with Low-E reflective solar control double glass units.</span>
-                  </li>
-                </ul>
-              </div>
-              <button
-                onClick={() => onOpenQuoteModal('Curtain Wall 10x5 cm (100x50 mm)')}
-                className="w-full py-2 bg-slate-50 hover:bg-emerald-50 dark:bg-white/5 dark:hover:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 text-[11px] font-bold uppercase tracking-wider transition-colors text-center cursor-pointer"
-              >
-                Inquire Curtain Wall
-              </button>
-            </div>
+          </div>
 
+          {/* Curtain Wall Facade Showcase (10/5 & 8/5 Systems) with Image */}
+          <div className="p-6 sm:p-8 bg-slate-50/90 dark:bg-white/[0.02] border border-emerald-900/15 dark:border-white/10 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Image Column */}
+              <div className="lg:col-span-5 relative group overflow-hidden border border-emerald-900/10 dark:border-white/10">
+                <img
+                  src={curtainWallImg}
+                  alt="Curtain Wall Facade System 10/5 and 8/5"
+                  className="w-full h-72 sm:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                <div className="absolute top-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold">
+                  Curtain Wall Facades • كيرتن وول
+                </div>
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                  <span className="text-[11px] text-white/90 font-medium">10/5 &amp; 8/5 Structural Mullion Grid</span>
+                  <button
+                    onClick={() => setActiveImageModal(curtainWallImg)}
+                    className="p-1.5 bg-emerald-600/90 hover:bg-emerald-600 text-white rounded-none text-xs flex items-center gap-1 transition-colors cursor-pointer"
+                    title="Zoom Image"
+                  >
+                    <Maximize2 className="w-3.5 h-3.5" />
+                    <span className="text-[10px] font-mono">Zoom</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Information & 10/5 vs 8/5 Breakdown Column */}
+              <div className="lg:col-span-7 flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold uppercase tracking-wider font-mono mb-2">
+                    Structural Glass Envelopes
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-light text-slate-900 dark:text-white tracking-tight mb-2">
+                    Curtain Wall Facade Systems (10/5 &amp; 8/5)
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-300 leading-relaxed mb-6 font-normal">
+                    Engineered stick and semi-unitized architectural curtain wall systems for double-height villa facades, commercial entrance atriums, and floor-to-ceiling panoramic glass walls.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    
+                    {/* Option 10/5 */}
+                    <div className="p-4 bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                          Curtain Wall 10/5
+                        </span>
+                        <span className="text-[10px] font-mono text-slate-500 dark:text-gray-400">
+                          100x50 mm
+                        </span>
+                      </div>
+                      <div className="text-xs font-arabic font-medium text-slate-800 dark:text-slate-200 mb-2">
+                        كيرتن وول 10/5 سم (100×50 ملم)
+                      </div>
+                      <p className="text-[11px] text-slate-600 dark:text-gray-400 leading-snug">
+                        Heavy-duty 100mm mullion depth for high wind loads, double-height villa atriums, and commercial towers.
+                      </p>
+                      <button
+                        onClick={() => onOpenQuoteModal('Curtain Wall 10/5 (10x5 cm / 100x50 mm)')}
+                        className="mt-3 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider hover:underline flex items-center gap-1 cursor-pointer"
+                      >
+                        <span>Select 10/5 Option</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </button>
+                    </div>
+
+                    {/* Option 8/5 */}
+                    <div className="p-4 bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                          Curtain Wall 8/5
+                        </span>
+                        <span className="text-[10px] font-mono text-slate-500 dark:text-gray-400">
+                          80x50 mm
+                        </span>
+                      </div>
+                      <div className="text-xs font-arabic font-medium text-slate-800 dark:text-slate-200 mb-2">
+                        كيرتن وول 8/5 سم (80×50 ملم)
+                      </div>
+                      <p className="text-[11px] text-slate-600 dark:text-gray-400 leading-snug">
+                        Medium 80mm structural grid ideal for residential villa elevations, stairwell glazing, and modern storefronts.
+                      </p>
+                      <button
+                        onClick={() => onOpenQuoteModal('Curtain Wall 8/5 (8x5 cm / 80x50 mm)')}
+                        className="mt-3 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider hover:underline flex items-center gap-1 cursor-pointer"
+                      >
+                        <span>Select 8/5 Option</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-gray-400">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Compliant with UAE Municipality &amp; Civil Defence thermal standards</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={`https://wa.me/${COMPANY_CONFIG.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello, I am inquiring about Curtain Wall 10/5 and 8/5 systems for my project.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+                    >
+                      <span>WhatsApp BOQ</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
           </div>
         </div>
 

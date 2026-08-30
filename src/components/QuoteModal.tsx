@@ -179,12 +179,39 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
                       onChange={(e) => setGlassType(e.target.value)}
                       className="w-full px-4 py-3 bg-slate-50 dark:bg-black/70 border border-slate-200 dark:border-white/15 rounded-none text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:border-emerald-600"
                     >
+                      <optgroup label="Architectural Door Systems (أبواب ألمنيوم وزجاج)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                        <option value="Single Hinge Aluminium & Glass Door" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Single Hinge Aluminium &amp; Glass Door (باب ألمنيوم مفصلات مفرد)
+                        </option>
+                        <option value="Double Hinge Aluminium French Glass Door" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Double Hinge Aluminium French Glass Door (باب ألمنيوم مفصلات دبل / فرنسي)
+                        </option>
+                        <option value="Single Leaf Sliding Aluminium Glass Door" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Single Leaf Sliding Aluminium Glass Door (باب ألمنيوم سحاب مفرد)
+                        </option>
+                        <option value="Double Leaf Sliding Glass Patio Door" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Double Leaf Sliding Glass Patio Door (باب ألمنيوم سحاب دبل ضلفتين)
+                        </option>
+                        <option value="Frameless Tempered Glass Single Door (Securit)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Frameless Glass Single Door (باب زجاج سيكوريت مفرد 12 ملم)
+                        </option>
+                        <option value="Frameless Tempered Glass Double Door (Securit)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Frameless Glass Double Door (باب زجاج سيكوريت دبل ضلفتين)
+                        </option>
+                      </optgroup>
+
                       <optgroup label="Aluminium Profile Systems (قطاعات ألمنيوم)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
                         <option value="10cm Aluminium with Single Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
                           10cm Aluminium with Single Glass (ألمنيوم 10 سم زجاج مفرد)
                         </option>
                         <option value="10cm Aluminium with Double Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
                           10cm Aluminium with Double Glass (ألمنيوم 10 سم زجاج دبل)
+                        </option>
+                        <option value="10.37 Aluminium with Single Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          10.37 Aluminium with Single Glass (ألمنيوم 10.37 سم زجاج مفرد)
+                        </option>
+                        <option value="10.37 Aluminium with Double Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          10.37 Aluminium with Double Glass (ألمنيوم 10.37 سم زجاج دبل)
                         </option>
                         <option value="10.5cm Aluminium with Single Glass" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
                           10.5cm Aluminium with Single Glass (ألمنيوم 10.5 سم زجاج مفرد)
@@ -195,11 +222,20 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
                       </optgroup>
 
                       <optgroup label="Curtain Wall Systems (كيرتن وول واجهات)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
-                        <option value="Curtain Wall 10x5 cm (100x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
-                          Curtain Wall 10x5 cm (100x50 mm) (كيرتن وول واجهات 10×5 سم)
+                        <option value="Curtain Wall 10/5 (10x5 cm / 100x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Curtain Wall 10/5 (10x5 cm / 100x50 mm) (كيرتن وول واجهات 10/5 سم)
                         </option>
-                        <option value="Curtain Wall 8x5 cm (80x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
-                          Curtain Wall 8x5 cm (80x50 mm) (كيرتن وول واجهات 8×5 سم)
+                        <option value="Curtain Wall 8/5 (8x5 cm / 80x50 mm)" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Curtain Wall 8/5 (8x5 cm / 80x50 mm) (كيرتن وول واجهات 8/5 سم)
+                        </option>
+                      </optgroup>
+
+                      <optgroup label="Kitchen Cabinet Glass Options (خزائن مطابخ ألمنيوم وزجاج)" className="bg-slate-100 dark:bg-[#181c22] font-semibold text-emerald-800 dark:text-emerald-400">
+                        <option value="Kitchen Cabinets - Single Piece Glass Doors" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Kitchen Cabinets - Single Piece Glass (خزائن مطابخ قطعة واحدة زجاج)
+                        </option>
+                        <option value="Kitchen Cabinets - Double Piece Glass Doors" className="bg-white dark:bg-[#121418] text-slate-900 dark:text-white">
+                          Kitchen Cabinets - Double Piece Glass (خزائن مطابخ قطعتين زجاج / دبل)
                         </option>
                       </optgroup>
 

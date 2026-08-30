@@ -23,6 +23,48 @@ export const COMPANY_CONFIG = {
 
 export const ALUMINIUM_SYSTEM_OPTIONS = [
   {
+    id: "hinge-door-single",
+    name: "Single Hinge Aluminium & Glass Door",
+    arabicName: "باب ألمنيوم مفصلات مفرد (زجاج مفرد / دبل)",
+    description: "Heavy-duty 6063-T6 aluminium hinged single door with thermal/non-thermal profile, multi-point lock, and 6mm-24mm acoustic glass. For villa entrances, balconies, and offices.",
+    category: "Door Systems"
+  },
+  {
+    id: "hinge-door-double",
+    name: "Double Hinge Aluminium French Glass Door",
+    arabicName: "باب ألمنيوم مفصلات دبل / فرنسي (ضلفتين)",
+    description: "Grand double leaf hinged French door system with flush threshold, master-slave locking, and double glazed insulated acoustic glass. Ideal for villa patios and majlis.",
+    category: "Door Systems"
+  },
+  {
+    id: "sliding-door-single",
+    name: "Single Leaf Sliding Aluminium Glass Door",
+    arabicName: "باب ألمنيوم سحاب مفرد (سلايدنج)",
+    description: "Smooth glide single panel pocket or wall-mount sliding glass door with stainless steel tandem rollers and concealed soft-close dampeners.",
+    category: "Door Systems"
+  },
+  {
+    id: "sliding-door-double",
+    name: "Double Leaf Sliding Glass Patio Door",
+    arabicName: "باب ألمنيوم سحاب دبل (ضلفتين / سكتين)",
+    description: "High-performance two-panel sliding glass door system with ultra-slim interlock (20mm-45mm) and flush zero-trip floor track for seamless villa indoor-outdoor living.",
+    category: "Door Systems"
+  },
+  {
+    id: "glass-door-single",
+    name: "Frameless Tempered Glass Single Door (Securit)",
+    arabicName: "باب زجاج سيكوريت مفرد 12 ملم مع ماكينة أرضية",
+    description: "10mm/12mm monolithic clear/frosted toughened glass single door with heavy-duty hydraulic floor spring, SS316 patch fittings, and ergonomic vertical pull handle.",
+    category: "Door Systems"
+  },
+  {
+    id: "glass-door-double",
+    name: "Frameless Tempered Glass Double Door (Securit)",
+    arabicName: "باب زجاج سيكوريت دبل ضلفتين مع ماكينة أرضية",
+    description: "Double leaf frameless tempered glass entrance door with German hydraulic floor springs, top pivot patches, central lock, and custom stainless steel / matte black pull bars.",
+    category: "Door Systems"
+  },
+  {
     id: "10cm-single-glass",
     name: "10cm Aluminium with Single Glass",
     arabicName: "ألمنيوم 10 سم زجاج مفرد",
@@ -34,6 +76,20 @@ export const ALUMINIUM_SYSTEM_OPTIONS = [
     name: "10cm Aluminium with Double Glass",
     arabicName: "ألمنيوم 10 سم زجاج دبل",
     description: "Heavy-duty 100mm aluminium profile with double glazed insulated acoustic Low-E glass (6mm+12A+6mm). Superior heat barrier and dust isolation.",
+    category: "Aluminium Systems"
+  },
+  {
+    id: "10.37cm-single-glass",
+    name: "10.37 Aluminium with Single Glass",
+    arabicName: "ألمنيوم 10.37 سم زجاج مفرد",
+    description: "Precision 103.7mm (10.37cm) heavy architectural profile system with single 8mm/10mm toughened glass. Engineered for enhanced structural stability and wind tolerance.",
+    category: "Aluminium Systems"
+  },
+  {
+    id: "10.37cm-double-glass",
+    name: "10.37 Aluminium with Double Glass",
+    arabicName: "ألمنيوم 10.37 سم زجاج دبل",
+    description: "Heavy-duty 10.37cm (103.7mm) aluminium system with double glazed acoustic Low-E thermal unit (up to 24mm DGU). Ideal for luxury villa windows, sliding systems, and majlis openings.",
     category: "Aluminium Systems"
   },
   {
@@ -52,17 +108,31 @@ export const ALUMINIUM_SYSTEM_OPTIONS = [
   },
   {
     id: "curtain-wall-10x5",
-    name: "Curtain Wall 10x5 cm (100x50 mm)",
-    arabicName: "كيرتن وول واجهات زجاجية 10×5 سم",
-    description: "100mm x 50mm heavy structural mullion & transom curtain wall system. Ideal for double-height villa facades, commercial showrooms, and grand glass envelopes.",
+    name: "Curtain Wall 10/5 (10x5 cm / 100x50 mm)",
+    arabicName: "كيرتن وول واجهات زجاجية 10/5 سم (100×50 ملم)",
+    description: "100mm x 50mm heavy structural mullion & transom curtain wall grid system. Engineered for double-height villa facades, commercial towers, and grand glass envelopes.",
     category: "Curtain Wall Systems"
   },
   {
     id: "curtain-wall-8x5",
-    name: "Curtain Wall 8x5 cm (80x50 mm)",
-    arabicName: "كيرتن وول واجهات زجاجية 8×5 سم",
+    name: "Curtain Wall 8/5 (8x5 cm / 80x50 mm)",
+    arabicName: "كيرتن وول واجهات زجاجية 8/5 سم (80×50 ملم)",
     description: "80mm x 50mm medium structural grid curtain wall system for residential villa facade openings, entrance double glazing, and stairwell light wells.",
     category: "Curtain Wall Systems"
+  },
+  {
+    id: "kitchen-single-piece-glass",
+    name: "Kitchen Cabinets - Single Piece Glass Doors",
+    arabicName: "خزائن مطابخ ألمنيوم - قطعة واحدة زجاج (Single Piece Glass)",
+    description: "Full single-piece seamless tempered glass cabinet doors (Clear, Smoked Grey, Fluted Reeded) mounted on slim aluminium frames with Blum soft-close hinges and LED channels.",
+    category: "Kitchen Cabinets"
+  },
+  {
+    id: "kitchen-double-piece-glass",
+    name: "Kitchen Cabinets - Double Piece Glass Doors",
+    arabicName: "خزائن مطابخ ألمنيوم - قطعتين زجاج / دبل جلاس (Double Piece Glass)",
+    description: "Two-piece split glass shutters or double insulated glass cabinet doors with internal architectural grid divider and dust-proof perimeter seals for luxury display units.",
+    category: "Kitchen Cabinets"
   },
   {
     id: "12mm-toughened-frameless",
@@ -112,43 +182,43 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "kitchen-cabinets",
     number: "02",
-    name: "Aluminium Kitchen Cabinets",
-    shortDesc: "Modern moisture-proof, fire-resistant luxury aluminium modular kitchens and pantry storage systems (مطابخ ألمنيوم).",
-    fullDesc: "Bespoke Italian-engineered aluminium kitchen cabinetry designed to eliminate warping, termite damage, and moisture issues common in the Gulf climate. Features aircraft-grade extruded aluminium carcasses, smoked tempered glass door shutters, soft-close Blum hardware, integrated under-cabinet warm LED lighting, and premium porcelain/quartz finishes.",
+    name: "Aluminium Kitchen Cabinets & Glass",
+    shortDesc: "Luxury moisture-proof aluminium modular kitchens with Single Piece & Double Piece glass shutter options (مطابخ ألمنيوم وزجاج).",
+    fullDesc: "Bespoke Italian-engineered aluminium kitchen cabinetry designed to eliminate warping, termite damage, and moisture issues in UAE homes. Features aircraft-grade aluminium carcasses with Single Piece Glass or Double Piece Glass shutters (Clear, Smoked Grey, Fluted Reeded), German Blum soft-close fittings, and concealed 3000K LED lighting.",
     image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85",
     category: "Villas & Interiors",
     specs: [
-      { label: "Core Material", value: "100% Aircraft-Grade Extruded Aluminium (Non-combustible)" },
-      { label: "Door Finishes", value: "Smoked Tempered Glass, Porcelain Slab, Matt Metallic" },
-      { label: "Hardware", value: "German Blum Soft-Close Hinges & Push-to-Open Tracks" },
-      { label: "Hygiene", value: "100% Waterproof, Termite-Proof & Easy Clean" }
+      { label: "Glass Options", value: "Single Piece Glass OR Double Piece Glass Shutters (Smoked/Fluted/Clear)" },
+      { label: "Core Carcass", value: "100% Aircraft-Grade 6063-T6 Extruded Aluminium (Non-Combustible)" },
+      { label: "Hardware", value: "German Blum Soft-Close Dampened Hinges & Heavy-Duty Drawers" },
+      { label: "Hygiene & Durability", value: "100% Waterproof, Termite-Proof, Steam-Resistant & Easy Clean" }
     ],
     features: [
-      "Zero formaldehyde emissions and fully fire-retardant construction",
-      "Integrated continuous 3000K warm LED linear ambient channels",
-      "Heavy load capacity drawers with custom cutlery and spice organizers",
-      "High resistance to cooking steam, humidity, and heat"
+      "Single Piece Glass: Full seamless tempered glass door fronts for ultra-modern minimal lines",
+      "Double Piece Glass: Dual glass panel shutters / double layer insulated glass with subtle architectural frames",
+      "Integrated concealed continuous 3000K warm LED linear ambient channels",
+      "Heavy load capacity drawers with custom cutlery, pantry, and spice pull-out organizers"
     ]
   },
   {
     id: "glass-aluminium-doors",
     number: "03",
     name: "Glass & Aluminium Doors",
-    shortDesc: "Ultra-slim sliding, pivot, bifold, and entrance door systems for contemporary architecture (أبواب زجاج وألمنيوم).",
-    fullDesc: "Precision-engineered door systems combining minimal aluminium profiles with heavy-duty structural rigidity. Ideal for grand villa main entrances, master bedrooms, garden patio openings, and commercial entrances. Features multi-point German locking, hydraulic concealed floor springs, and biometric smart lock integration.",
+    shortDesc: "Hinged single & double doors, ultra-slim sliding patio doors, and frameless tempered glass securit doors (أبواب مفصلات، سحاب، وسيكوريت).",
+    fullDesc: "Precision-engineered door systems combining heavy-duty 10cm / 10.5cm aluminium profiles and 10mm–12mm tempered safety glass. Includes Single & Double Hinge doors with German multi-point locking, Single & Double sliding patio doors with flush tracks, and Frameless Securit glass doors with hydraulic floor spring machines.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
     category: "Doors & Windows",
     specs: [
-      { label: "Sightline", value: "Ultra-slim 20mm – 45mm minimal interlocks" },
-      { label: "Door Formats", value: "Pivot Doors, Multi-Track Sliding, Bifold, Hinged" },
-      { label: "Security", value: "Multi-Point Security Lock & Biometric Smart Access" },
-      { label: "Glass Options", value: "10mm–12mm Toughened / Double Glazed Acoustic" }
+      { label: "Hinge Systems", value: "Single & Double Leaf French Doors with 3D Adjustable Hinges" },
+      { label: "Sliding Systems", value: "Single & Double Leaf Sliding with 20mm-45mm Ultra-Slim Interlocks" },
+      { label: "Glass Securit", value: "10mm / 12mm Frameless Tempered Glass with German Floor Springs" },
+      { label: "Glazing Options", value: "Single Safety Toughened OR Double Glazed 24mm DGU Acoustic Low-E" }
     ],
     features: [
-      "Oversized pivot doors up to 3.5m height and 2m width with heavy-duty pivot pins",
-      "Zero-threshold flush floor track design for smooth transitions",
-      "Marine-grade anti-corrosion powder coating resistant to salt and humidity",
-      "Concealed self-closing hydraulic dampeners and magnetic air seals"
+      "Single and Double door configurations for villa entrances, majlis, balconies, and offices",
+      "Concealed sub-floor zero-threshold tracks for barrier-free sliding glass openings",
+      "German multi-point perimeter security locking & biometric smart handle compatibility",
+      "Hydraulic soft-close dampeners and magnetic acoustic weather seals against UAE dust"
     ]
   },
   {

@@ -6,6 +6,8 @@ import { TrustStrip } from './components/TrustStrip';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { WindowsSection } from './components/WindowsSection';
+import { DoorsSection } from './components/DoorsSection';
+import { KitchenCabinetSection } from './components/KitchenCabinetSection';
 import { RailingsSection } from './components/RailingsSection';
 import { FeaturedProjects } from './components/FeaturedProjects';
 import { PremiumFeatureSection } from './components/PremiumFeatureSection';
@@ -65,6 +67,12 @@ export default function App() {
 
           {/* Architectural Windows Systems Showcase (Wood-Grain Awning, Sliding Transoms, Grid Panoramic, Exhaust Windows) */}
           <WindowsSection onOpenQuoteModal={handleOpenQuoteModal} />
+
+          {/* Architectural Doors Systems Showcase (Hinge Doors Single/Double, Sliding Doors Single/Double, Frameless Glass Doors) */}
+          <DoorsSection onOpenQuoteModal={handleOpenQuoteModal} />
+
+          {/* Aluminium Kitchen Cabinets Showcase (Single Piece & Double Piece Glass Shutter Options) */}
+          <KitchenCabinetSection onOpenQuoteModal={handleOpenQuoteModal} />
 
           {/* Architectural Railings & Glass Balustrades (Frameless Glass, Black Picket, Floating Stairs, Outdoor Ramps) */}
           <RailingsSection onOpenQuoteModal={handleOpenQuoteModal} />
