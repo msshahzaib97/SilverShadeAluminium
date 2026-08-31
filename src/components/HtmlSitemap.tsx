@@ -22,6 +22,7 @@ import { COMPANY_CONFIG } from '../data/content';
 
 interface HtmlSitemapProps {
   onOpenQuoteModal: (service?: string) => void;
+  onOpenLegalModal?: (tab: 'privacy' | 'terms' | 'about' | 'contact' | 'team' | 'editorial' | 'sitemap') => void;
 }
 
 interface SitemapGroup {
@@ -37,10 +38,11 @@ interface SitemapGroup {
     desc?: string;
     isModalTrigger?: boolean;
     serviceName?: string;
+    legalTab?: 'privacy' | 'terms' | 'about' | 'contact' | 'team' | 'editorial' | 'sitemap';
   }[];
 }
 
-export const HtmlSitemap: React.FC<HtmlSitemapProps> = ({ onOpenQuoteModal }) => {
+export const HtmlSitemap: React.FC<HtmlSitemapProps> = ({ onOpenQuoteModal, onOpenLegalModal }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -59,7 +61,26 @@ export const HtmlSitemap: React.FC<HtmlSitemapProps> = ({ onOpenQuoteModal }) =>
         { label: 'Completed Projects Portfolio', arabicLabel: 'معرض المشاريع المنفذة', href: '#projects', desc: 'Luxury villas, penthouses, and commercial installations in UAE' },
         { label: 'Why Silver Shade & Factory Standards', arabicLabel: 'لماذا سيلفر شيد ومعايير المصنع', href: '#why-us', desc: '6063-T6 virgin alloys, CNC precision, and ISO standards' },
         { label: 'Frequently Asked Questions (FAQs)', arabicLabel: 'الأسئلة الشائعة والإجابات الفنية', href: '#faq', desc: 'Warranty, thermal specs, Dubai & Abu Dhabi approvals' },
-        { label: 'Contact Us & Free Site Measurement', arabicLabel: 'اتصل بنا وحجز معاينة مجانية', href: '#contact', desc: 'Direct engineers contact, WhatsApp, and location maps' },
+        { label: 'Contact Us & Free Site Measurement', arabicLabel: 'اتصل بنا وحجز معاينة مجانية', href: '#contact', desc: 'Direct engineers contact, WhatsApp, and location maps', legalTab: 'contact' },
+      ]
+    },
+    {
+      id: 'corporate-legal-standards',
+      title: 'Corporate, Authors, Legal & Editorial',
+      arabicTitle: 'المؤسسة، فريق المهندسين، السياسات والمعايير',
+      icon: '⚖️',
+      badge: 'Official UAE Info',
+      links: [
+        { label: 'Privacy Policy & Data Protection (UAE PDPL)', arabicLabel: 'سياسة الخصوصية وحماية البيانات الشخصية', href: '#privacy-policy', desc: 'Compliant with UAE Federal Decree-Law No. 45 of 2021', legalTab: 'privacy' },
+        { label: 'Terms of Service & Contracting Conditions', arabicLabel: 'الشروط والأحكام وعقود المقاولات المعمارية', href: '#terms-of-service', desc: 'AED payment milestones, CAD approvals, and 15-year warranties', legalTab: 'terms' },
+        { label: 'About Us & Musaffah Factory Facilities', arabicLabel: 'من نحن ومصنع الألمنيوم في مصفح أبوظبي', href: '#about', desc: '15+ years UAE legacy, German CNC machinery, and ISO certifications', legalTab: 'about' },
+        { label: 'Contact Us & Free Survey Booking', arabicLabel: 'اتصل بنا وفروع أبوظبي ودبي', href: '#contact', desc: 'Direct engineers, GPS coordinates, office timings & 24hr visits', legalTab: 'contact' },
+        { label: 'Authors & Engineering Leadership Team', arabicLabel: 'فريق المهندسين، خبراء الواجهات والمعلمين', href: '#team', desc: 'Chief facade engineer, master majlis craftsman, QA inspectors', legalTab: 'team' },
+        { label: 'Team Photos in Workspace (Factory Operations)', arabicLabel: 'صور فريق العمل في المصنع وورشة مصفح', href: '#workspace-gallery', desc: '12,000 sq ft Musaffah plant, CNC cutting, double-glazing crane, and steel forge' },
+        { label: 'Trusted Source & Building Codes Compliance', arabicLabel: 'الجهة الموثوقة ومطابقة أكواد البناء واستدامة', href: '#trusted-source-and-media', desc: 'DMT, Estidama Pearl rating, Dubai Al Sa\'fat, ASTM E330, and Qualicoat' },
+        { label: 'Parent Company & Group Operations', arabicLabel: 'الشركة الأم والمجموعة القابضة والترخيص التجاري', href: '#about', desc: 'Silver Shade Group & Architectural Contracting LLC (CN-1184920)' },
+        { label: 'Editorial Guidelines & Technical Standards', arabicLabel: 'المعايير التحريرية ومطابقة كود البناء والاستدامة', href: '#editorial-guidelines', desc: 'ASTM test verification, peer-review process, and price transparency', legalTab: 'editorial' },
+        { label: 'HTML Sitemap Directory (Index Tree)', arabicLabel: 'خريطة الموقع التفاعلية الشاملة', href: '#html-sitemap', desc: 'Direct indexed links to all products, systems, and legal pages', legalTab: 'sitemap' },
       ]
     },
     {
@@ -263,6 +284,9 @@ export const HtmlSitemap: React.FC<HtmlSitemapProps> = ({ onOpenQuoteModal }) =>
                               if (link.isModalTrigger) {
                                 e.preventDefault();
                                 onOpenQuoteModal(link.serviceName);
+                              } else if (link.legalTab && onOpenLegalModal) {
+                                e.preventDefault();
+                                onOpenLegalModal(link.legalTab);
                               } else if (link.href.startsWith('#')) {
                                 e.preventDefault();
                                 scrollToAnchor(link.href);

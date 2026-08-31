@@ -8,9 +8,10 @@ import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
   onOpenQuoteModal: (service?: string) => void;
+  onOpenLegalModal?: (tab: 'privacy' | 'terms' | 'about' | 'contact' | 'team' | 'editorial' | 'sitemap') => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal, onOpenLegalModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, openLanguageModal, currentLanguage } = useLanguage();
@@ -27,13 +28,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
     { name: t('nav_home', 'Home'), href: '#home' },
     { name: t('nav_about', 'About'), href: '#about' },
     { name: t('nav_services', 'Services'), href: '#services' },
+    { name: 'Team', href: '#team' },
+    { name: 'Guidelines', href: '#editorial-guidelines' },
     { name: t('nav_windows', 'Windows'), href: '#windows-showcase' },
     { name: t('nav_majlis', 'Majlis'), href: '#majlis-showcase' },
     { name: t('nav_tents', 'Tents (خيام)'), href: '#kuwaiti-tent-showcase' },
-    { name: t('nav_railings', 'Railings'), href: '#railings-showcase' },
     { name: t('nav_projects', 'Projects'), href: '#projects' },
-    { name: t('nav_why_us', 'Why Us'), href: '#why-us' },
-    { name: t('nav_faq', 'FAQ'), href: '#faq' },
+    { name: 'Sitemap', href: '#html-sitemap' },
     { name: t('nav_contact', 'Contact'), href: '#contact' },
   ];
 

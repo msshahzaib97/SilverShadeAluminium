@@ -1,22 +1,41 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowUpRight, MapPin, Phone, Mail, MessageCircle, X, Globe } from 'lucide-react';
+import { 
+  ArrowUpRight, 
+  MapPin, 
+  Phone, 
+  Mail, 
+  MessageCircle, 
+  X, 
+  Globe, 
+  ShieldCheck, 
+  Building2, 
+  Lock,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Youtube,
+  Share2
+} from 'lucide-react';
 import { COMPANY_CONFIG } from '../data/content';
 import { useLanguage } from '../context/LanguageContext';
 import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
   onOpenQuoteModal: (service?: string) => void;
+  onOpenLegalModal?: (tab: 'privacy' | 'terms' | 'about' | 'contact' | 'team' | 'editorial' | 'sitemap') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
-  const [activeLegalModal, setActiveLegalModal] = useState<'privacy' | 'terms' | null>(null);
+export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal, onOpenLegalModal }) => {
   const { currentLanguage, setLanguage, openLanguageModal } = useLanguage();
+  const currentYear = new Date().getFullYear();
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
+    { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Authors & Team', href: '#team', legalTab: 'team' as const },
+    { name: 'Editorial Guidelines', href: '#editorial-guidelines', legalTab: 'editorial' as const },
     { name: 'Tents (خيام)', href: '#kuwaiti-tent-showcase' },
     { name: 'Majlis', href: '#majlis-showcase' },
     { name: 'Windows', href: '#windows-showcase' },
@@ -24,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
     { name: 'Projects', href: '#projects' },
     { name: 'HTML Sitemap', href: '#html-sitemap' },
     { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact Us', href: '#contact' },
   ];
 
   const serviceList = [
@@ -38,10 +57,36 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
     'Car Parking Shades & Pergolas',
   ];
 
+  const corporateLinks = [
+    { name: 'Privacy Policy (UAE PDPL)', tab: 'privacy' as const, href: '#privacy-policy' },
+    { name: 'Terms of Service & Contracts', tab: 'terms' as const, href: '#terms-of-service' },
+    { name: 'Editorial Standards & Fact-Checking', tab: 'editorial' as const, href: '#editorial-guidelines' },
+    { name: 'Engineering Leadership & Authors', tab: 'team' as const, href: '#team' },
+    { name: 'Factory & Company Background', tab: 'about' as const, href: '#about' },
+    { name: 'Contact & Free Site Survey', tab: 'contact' as const, href: '#contact' },
+    { name: 'Interactive HTML Sitemap', tab: 'sitemap' as const, href: '#html-sitemap' },
+  ];
+
+  const socialIcons = [
+    { name: 'WhatsApp', icon: MessageCircle, url: 'https://wa.me/971523352536', hoverClass: 'hover:bg-emerald-500 hover:text-white' },
+    { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/silvershadealuminium', hoverClass: 'hover:bg-pink-600 hover:text-white' },
+    { name: 'Facebook', icon: Facebook, url: 'https://facebook.com/silvershadealuminium', hoverClass: 'hover:bg-blue-600 hover:text-white' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/company/silver-shade-aluminium', hoverClass: 'hover:bg-blue-700 hover:text-white' },
+    { name: 'YouTube', icon: Youtube, url: 'https://youtube.com/@silvershadealuminium', hoverClass: 'hover:bg-red-600 hover:text-white' },
+  ];
+
   const scrollTo = (href: string) => {
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleLegalClick = (tab: 'privacy' | 'terms' | 'about' | 'contact' | 'team' | 'editorial' | 'sitemap', href: string) => {
+    if (onOpenLegalModal) {
+      onOpenLegalModal(tab);
+    } else {
+      scrollTo(href);
     }
   };
 
@@ -50,24 +95,56 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
       <footer id="main-footer" className="bg-[#050806] dark:bg-[#030504] text-slate-400 text-xs border-t border-emerald-900/30 dark:border-emerald-500/20 pt-16 pb-12 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-emerald-950/80 dark:border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-14 border-b border-emerald-950/80 dark:border-white/10">
             
-            {/* Brand Column */}
+            {/* Brand, Parent Company & Short Website Description Column */}
             <div className="lg:col-span-4 space-y-4">
               <a href="#home" aria-label="Silver Shade Aluminium - Back to Top">
                 <BrandLogo size="md" showArabic />
               </a>
 
-              <p className="text-xs text-slate-400 max-w-sm leading-relaxed font-normal">
-                {COMPANY_CONFIG.tagline}. Specializing in bespoke minimal sliding systems, acoustic glass partitioning, high-performance windows, and luxury architectural envelope works across Abu Dhabi, Dubai, and the UAE.
+              {/* Short Website Description */}
+              <p className="text-xs text-slate-300 dark:text-slate-400 max-w-sm leading-relaxed font-normal">
+                {COMPANY_CONFIG.tagline}. Silver Shade Aluminium is an ISO 9001:2015 certified architectural fabrication contractor specializing in custom acoustic glazing, heavy-duty aluminium profiles, insulated thermal-break windows, French doors, Kuwaiti winter steel tents, and luxury Majlis structures across Abu Dhabi, Dubai, and the UAE.
               </p>
 
-              <div className="pt-2 text-[11px] text-emerald-400/80">
-                <span>Headquarters: {COMPANY_CONFIG.location}</span>
+              {/* Parent Company Specification */}
+              <div className="p-3 bg-emerald-950/30 border border-emerald-800/30 rounded-lg space-y-1.5">
+                <div className="flex items-center gap-1.5 text-emerald-400 font-semibold text-[11px] uppercase tracking-wider">
+                  <Building2 className="w-3.5 h-3.5" />
+                  <span>Parent Company &amp; Group</span>
+                </div>
+                <p className="text-[11px] text-slate-300">
+                  Operated under <strong className="text-white">{COMPANY_CONFIG.parentCompany}</strong> (Abu Dhabi Commercial Registry CN-1184920).
+                </p>
+              </div>
+
+              {/* Social Media Links in Footer */}
+              <div className="space-y-2 pt-1">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-300">
+                  Connect With Us on Social Media
+                </div>
+                <div className="flex items-center gap-2">
+                  {socialIcons.map((social) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Follow Silver Shade Aluminium on ${social.name}`}
+                        className={`w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 transition-all duration-200 ${social.hoverClass}`}
+                      >
+                        <Icon className="w-4 h-4" />
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
-            {/* Quick Navigation */}
+            {/* Quick Navigation Menu Links */}
             <div className="lg:col-span-2 space-y-3">
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-white">
                 Navigation
@@ -76,7 +153,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <button
-                      onClick={() => scrollTo(link.href)}
+                      onClick={() => {
+                        if (link.legalTab && onOpenLegalModal) {
+                          onOpenLegalModal(link.legalTab);
+                        } else {
+                          scrollTo(link.href);
+                        }
+                      }}
                       className="hover:text-emerald-400 transition-colors cursor-pointer text-left"
                     >
                       {link.name}
@@ -86,7 +169,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
               </ul>
             </div>
 
-            {/* Architectural Services */}
+            {/* Architectural Services Menu Links */}
             <div className="lg:col-span-3 space-y-3">
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-white">
                 Services
@@ -109,32 +192,50 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
               </ul>
             </div>
 
-            {/* Contact Details */}
-            <div className="lg:col-span-3 space-y-3">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-white">
-                Contact Details
+            {/* Physical Address, Compliance & Direct Contact */}
+            <div className="lg:col-span-3 space-y-4">
+              <div className="space-y-2">
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-white">
+                  Compliance &amp; Policy
+                </div>
+                <ul className="space-y-1.5">
+                  {corporateLinks.map((item) => (
+                    <li key={item.name}>
+                      <button
+                        onClick={() => handleLegalClick(item.tab, item.href)}
+                        className="text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer text-left text-[11px] block"
+                      >
+                        ▸ {item.name}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="space-y-2.5 text-xs text-slate-300">
+
+              {/* Physical Address Block */}
+              <div className="pt-2 border-t border-white/5 space-y-2 text-xs text-slate-300">
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>{COMPANY_CONFIG.location}</span>
+                  <div className="text-[11px] leading-relaxed">
+                    <strong className="text-white block">Physical Factory &amp; Office:</strong>
+                    <span>{COMPANY_CONFIG.physicalAddress.street}</span>
+                    <br />
+                    <span>{COMPANY_CONFIG.physicalAddress.city}, {COMPANY_CONFIG.physicalAddress.country}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+
+                <div className="flex items-center gap-2 pt-1">
+                  <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                   <a href="tel:+971523352536" className="hover:underline text-slate-200">+971 52 335 2536</a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <a href="tel:+971566076460" className="hover:underline text-slate-200">+971 56 607 6460</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                   <a href="https://wa.me/971523352536" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline font-medium">
-                    +971 52 335 2536 / +971 56 607 6460
+                    WhatsApp: +971 52 335 2536
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                   <a href={`mailto:${COMPANY_CONFIG.email}`} className="hover:underline text-slate-200">
                     {COMPANY_CONFIG.email}
                   </a>
@@ -144,8 +245,37 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
 
           </div>
 
+          {/* DMCA Badge, Intellectual Property & Trust Bar */}
+          <div className="py-5 border-b border-emerald-950/80 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+            <div className="flex items-center gap-3">
+              {/* DMCA Protected Badge */}
+              <div 
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-emerald-950/60 border border-emerald-700/50 text-slate-200 hover:border-emerald-500 transition-colors shadow-sm"
+                title="DMCA Protected - All Digital Architectural Models, Photographs & Technical Articles Protected"
+              >
+                <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center font-bold text-[10px] text-black">
+                  🛡️
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-extrabold text-[10px] text-white tracking-wider uppercase leading-none">DMCA PROTECTED</span>
+                  <span className="text-[9px] text-emerald-400 leading-tight">Digital Millennium Copyright Act</span>
+                </div>
+              </div>
+
+              {/* IP & ISO Badge */}
+              <div className="hidden sm:flex items-center gap-2 text-slate-400 text-[11px] border-l border-white/10 pl-3">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>ISO 9001:2015 &amp; UAE Civil Defense Compliant Specs</span>
+              </div>
+            </div>
+
+            <div className="text-center md:text-right text-[11px] text-slate-400">
+              <span>All CAD Shop Drawings, Architectural Photography &amp; Engineering Copy are Protected by UAE Copyright Law No. 38 of 2021.</span>
+            </div>
+          </div>
+
           {/* UAE Regional Coverage & Local SEO Keywords */}
-          <div className="py-6 border-b border-emerald-950/80 dark:border-white/10 text-[11px] text-slate-400">
+          <div className="py-5 border-b border-emerald-950/80 dark:border-white/10 text-[11px] text-slate-400">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 leading-relaxed">
               <span className="font-semibold text-emerald-400 uppercase tracking-wider">Service Areas &amp; Fast Site Visits:</span>
               <span className="text-slate-300">Musaffah Industrial</span> • 
@@ -161,7 +291,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
           </div>
 
           {/* Multi-Language Quick Selector in Footer */}
-          <div className="py-6 border-b border-emerald-950/80 dark:border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs">
+          <div className="py-5 border-b border-emerald-950/80 dark:border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs">
             <div className="flex items-center gap-2 text-slate-300">
               <Globe className="w-4 h-4 text-emerald-400 shrink-0" />
               <span className="font-semibold text-white">Language / اللغة / زبان:</span>
@@ -227,95 +357,62 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
-            <div>
-              &copy; 2026 Silver Shade Aluminium &amp; Glass Works LLC. All Rights Reserved. Musaffah, Abu Dhabi, UAE.
+          {/* Bottom Bar: Copyright Notice, Current Year, Parent Company & Footer Menu Links */}
+          <div className="pt-6 flex flex-col lg:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+            <div className="text-center lg:text-left">
+              <span>Copyright &copy; {currentYear} {COMPANY_CONFIG.brandName} &amp; Glass Works LLC (A Subsidiary of {COMPANY_CONFIG.parentCompany}). All Rights Reserved.</span>
+              <span className="block text-[10px] text-slate-500 mt-0.5">Musaffah Industrial Area, Abu Dhabi, United Arab Emirates.</span>
             </div>
 
-            <div className="flex items-center gap-6">
-              <a
-                href="#html-sitemap"
-                className="hover:text-emerald-400 text-emerald-400/90 font-medium transition-colors"
-              >
-                HTML Sitemap
-              </a>
+            {/* Footer Menu Links */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-5 gap-y-2">
               <button
-                onClick={() => setActiveLegalModal('privacy')}
+                onClick={() => handleLegalClick('privacy', '#privacy-policy')}
                 className="hover:text-emerald-400 transition-colors cursor-pointer"
               >
                 Privacy Policy
               </button>
               <button
-                onClick={() => setActiveLegalModal('terms')}
+                onClick={() => handleLegalClick('terms', '#terms-of-service')}
                 className="hover:text-emerald-400 transition-colors cursor-pointer"
               >
-                Terms &amp; Conditions
+                Terms of Service
               </button>
+              <button
+                onClick={() => handleLegalClick('about', '#about')}
+                className="hover:text-emerald-400 transition-colors cursor-pointer"
+              >
+                About Us
+              </button>
+              <button
+                onClick={() => handleLegalClick('contact', '#contact')}
+                className="hover:text-emerald-400 transition-colors cursor-pointer"
+              >
+                Contact Us
+              </button>
+              <button
+                onClick={() => handleLegalClick('team', '#team')}
+                className="hover:text-emerald-400 transition-colors cursor-pointer"
+              >
+                Authors &amp; Team
+              </button>
+              <button
+                onClick={() => handleLegalClick('editorial', '#editorial-guidelines')}
+                className="hover:text-emerald-400 transition-colors cursor-pointer"
+              >
+                Editorial Guidelines
+              </button>
+              <a
+                href="#html-sitemap"
+                className="hover:text-emerald-400 text-emerald-400 font-semibold transition-colors"
+              >
+                HTML Sitemap
+              </a>
             </div>
           </div>
 
         </div>
       </footer>
-
-      {/* Legal Information Modal */}
-      <AnimatePresence>
-        {activeLegalModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full max-w-lg bg-white dark:bg-[#111317] border border-emerald-900/20 dark:border-white/20 rounded-none p-6 sm:p-8 text-slate-700 dark:text-slate-300 shadow-2xl"
-            >
-              <button
-                onClick={() => setActiveLegalModal(null)}
-                className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-none bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
-                {activeLegalModal === 'privacy' ? 'Privacy Policy' : 'Terms & Conditions'}
-              </h3>
-
-              <div className="space-y-3 text-xs leading-relaxed text-slate-600 dark:text-slate-400 max-h-72 overflow-y-auto pr-2">
-                {activeLegalModal === 'privacy' ? (
-                  <>
-                    <p>
-                      At Silver Shade Aluminium (silvershadealuminium.com), we respect the privacy of our clients and site visitors across Dubai and the UAE.
-                    </p>
-                    <p>
-                      Personal information provided through quotation forms or WhatsApp communications (including names, contact numbers, architectural drawings, and location details) is utilized strictly for preparing engineering quotations and fulfilling contracted works.
-                    </p>
-                    <p>
-                      We do not sell, distribute, or share client information with external third parties without explicit authorization.
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <p>
-                      All technical specifications, CAD shop drawings, and engineering quotations provided by Silver Shade Aluminium are subject to site verification and final structural approval.
-                    </p>
-                    <p>
-                      Fabrication tolerances adhere to UAE architectural building codes and international aluminium extrusion standards. All works are backed by standard material and installation warranties as outlined in our project contracts.
-                    </p>
-                  </>
-                )}
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-200 dark:border-white/10 flex justify-end">
-                <button
-                  onClick={() => setActiveLegalModal(null)}
-                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs uppercase font-semibold rounded-none"
-                >
-                  Close
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
@@ -15,6 +15,10 @@ import { RailingsSection } from './components/RailingsSection';
 import { FeaturedProjects } from './components/FeaturedProjects';
 import { PremiumFeatureSection } from './components/PremiumFeatureSection';
 import { WhyChooseUsSection } from './components/WhyChooseUsSection';
+import { TeamSection } from './components/TeamSection';
+import { WorkspaceGallerySection } from './components/WorkspaceGallerySection';
+import { TrustedSourceAndMediaSection } from './components/TrustedSourceAndMediaSection';
+import { EditorialGuidelinesSection } from './components/EditorialGuidelinesSection';
 import { ProcessSection } from './components/ProcessSection';
 import { BeforeAfterSection } from './components/BeforeAfterSection';
 import { TestimonialSection } from './components/TestimonialSection';
@@ -27,10 +31,13 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { FloatingLanguageWidget } from './components/FloatingLanguageWidget';
 import { LanguageSwitcherModal } from './components/LanguageSwitcherModal';
 import { QuoteModal } from './components/QuoteModal';
+import { LegalAndComplianceModal, LegalModalTab } from './components/LegalAndComplianceModal';
 
 export default function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedQuoteService, setSelectedQuoteService] = useState<string | undefined>(undefined);
+  const [legalModalOpen, setLegalModalOpen] = useState(false);
+  const [legalModalTab, setLegalModalTab] = useState<LegalModalTab>('privacy');
 
   const handleOpenQuoteModal = (service?: string) => {
     setSelectedQuoteService(service);
@@ -40,6 +47,30 @@ export default function App() {
   const handleCloseQuoteModal = () => {
     setQuoteModalOpen(false);
   };
+
+  const handleOpenLegalModal = (tab: LegalModalTab = 'privacy') => {
+    setLegalModalTab(tab);
+    setLegalModalOpen(true);
+  };
+
+  const handleCloseLegalModal = () => {
+    setLegalModalOpen(false);
+  };
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      // Only open modal if explicit action triggered via legal hash
+      if (hash === '#privacy-policy-modal' || hash === '#privacy-modal') {
+        handleOpenLegalModal('privacy');
+      } else if (hash === '#terms-of-service-modal' || hash === '#terms-modal') {
+        handleOpenLegalModal('terms');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const handleExploreServices = () => {
     const servicesEl = document.querySelector('#services');
@@ -53,7 +84,10 @@ export default function App() {
       <ThemeProvider>
         <div className="min-h-screen bg-[#f8faf9] dark:bg-[#060a08] text-slate-900 dark:text-slate-100 selection:bg-emerald-500 selection:text-white overflow-x-hidden transition-colors duration-300 font-sans">
           {/* Sticky Luxury Navigation Header with Theme & Language Toggle */}
-          <Navbar onOpenQuoteModal={handleOpenQuoteModal} />
+          <Navbar 
+            onOpenQuoteModal={handleOpenQuoteModal} 
+            onOpenLegalModal={handleOpenLegalModal}
+          />
 
           {/* Main Sections */}
           <main>
@@ -66,28 +100,31 @@ export default function App() {
             {/* Trust & Introduction Strip */}
             <TrustStrip />
 
-            {/* Split-Screen About Section */}
+            {/* Split-Screen About Section (Who We Are, Our Story & Parent Company) */}
             <AboutSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+
+            {/* Trusted Source Statement & Featured Websites Linked */}
+            <TrustedSourceAndMediaSection />
 
             {/* Architectural Services Grid */}
             <ServicesSection onOpenQuoteModal={handleOpenQuoteModal} />
 
-            {/* Architectural Windows Systems Showcase (Wood-Grain Awning, Sliding Transoms, Grid Panoramic, Exhaust Windows) */}
+            {/* Architectural Windows Systems Showcase */}
             <WindowsSection onOpenQuoteModal={handleOpenQuoteModal} />
 
-            {/* Architectural Doors Systems Showcase (Hinge Doors Single/Double, Sliding Doors Single/Double, Frameless Glass Doors) */}
+            {/* Architectural Doors Systems Showcase */}
             <DoorsSection onOpenQuoteModal={handleOpenQuoteModal} />
 
-            {/* Tabuk Majlis & Qarmeed Clay Tile Roofs Showcase (مجلس طابوق وقرميد وزجاج فاخر) */}
+            {/* Tabuk Majlis & Qarmeed Clay Tile Roofs Showcase */}
             <MajlisTabukSection onOpenQuoteModal={handleOpenQuoteModal} />
 
-            {/* Kuwaiti Style Winter Steel & Glass Tents Showcase (خيمة شتاء سيف حديد شكل كويتي) */}
+            {/* Kuwaiti Style Winter Steel & Glass Tents Showcase */}
             <KuwaitiTentSection onOpenQuoteModal={handleOpenQuoteModal} />
 
-            {/* Aluminium Kitchen Cabinets Showcase (Single Piece & Double Piece Glass Shutter Options) */}
+            {/* Aluminium Kitchen Cabinets Showcase */}
             <KitchenCabinetSection onOpenQuoteModal={handleOpenQuoteModal} />
 
-            {/* Architectural Railings & Glass Balustrades (Frameless Glass, Black Picket, Floating Stairs, Outdoor Ramps) */}
+            {/* Architectural Railings & Glass Balustrades */}
             <RailingsSection onOpenQuoteModal={handleOpenQuoteModal} />
 
             {/* Featured Projects Portfolio */}
@@ -96,8 +133,17 @@ export default function App() {
             {/* Built for Dubai - Feature Section */}
             <PremiumFeatureSection />
 
-            {/* Why Silver Shade Aluminium - 6 Cards */}
+            {/* Why Silver Shade Aluminium */}
             <WhyChooseUsSection />
+
+            {/* Authors & Engineering Leadership Team Section */}
+            <TeamSection onOpenQuoteModal={handleOpenQuoteModal} />
+
+            {/* Team Photos in Workspace & Factory Operations Gallery */}
+            <WorkspaceGallerySection />
+
+            {/* Editorial Guidelines & Technical Publishing Standards Section */}
+            <EditorialGuidelinesSection />
 
             {/* From Concept to Completion - 4-Step Process */}
             <ProcessSection />
@@ -114,15 +160,21 @@ export default function App() {
             {/* FAQ Accordion Section */}
             <FaqSection />
 
-            {/* Contact & Consultation Section */}
+            {/* Contact & Consultation Section (Contact Us Page Section) */}
             <ContactSection />
 
             {/* Complete HTML Sitemap Directory for SEO & Direct Page Navigation */}
-            <HtmlSitemap onOpenQuoteModal={handleOpenQuoteModal} />
+            <HtmlSitemap 
+              onOpenQuoteModal={handleOpenQuoteModal} 
+              onOpenLegalModal={handleOpenLegalModal}
+            />
           </main>
 
-          {/* Luxury Footer */}
-          <Footer onOpenQuoteModal={handleOpenQuoteModal} />
+          {/* Luxury Footer with all 7 Page Links */}
+          <Footer 
+            onOpenQuoteModal={handleOpenQuoteModal} 
+            onOpenLegalModal={handleOpenLegalModal}
+          />
 
           {/* Floating Bottom-Right WhatsApp Button with Quick Chat */}
           <FloatingWhatsApp />
@@ -138,6 +190,14 @@ export default function App() {
             isOpen={quoteModalOpen}
             onClose={handleCloseQuoteModal}
             initialService={selectedQuoteService}
+          />
+
+          {/* Full-Featured Legal, Policy, Team & Sitemap Modal */}
+          <LegalAndComplianceModal
+            isOpen={legalModalOpen}
+            initialTab={legalModalTab}
+            onClose={handleCloseLegalModal}
+            onOpenQuoteModal={handleOpenQuoteModal}
           />
         </div>
       </ThemeProvider>

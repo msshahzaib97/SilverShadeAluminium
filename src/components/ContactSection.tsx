@@ -160,6 +160,19 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Mailing Address & Official Postal Dispatch */}
+                <div className="flex items-start gap-3.5 pt-2 border-t border-slate-100 dark:border-white/5">
+                  <div className="w-9 h-9 rounded-none bg-emerald-50 dark:bg-white/5 border border-emerald-200 dark:border-white/10 flex items-center justify-center text-emerald-700 dark:text-slate-300 shrink-0 mt-0.5">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Official Postal &amp; Mailing Address</span>
+                    <div className="text-slate-900 dark:text-white font-semibold text-xs mt-0.5">{COMPANY_CONFIG.mailingAddress.poBox}</div>
+                    <div className="text-[11px] text-slate-600 dark:text-slate-300">{COMPANY_CONFIG.mailingAddress.recipient}</div>
+                    <div className="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5">{COMPANY_CONFIG.mailingAddress.country} • {COMPANY_CONFIG.mailingAddress.courierDeliveryNote}</div>
+                  </div>
+                </div>
+
                 {/* Working Hours */}
                 <div className="flex items-start gap-3.5 pt-2">
                   <div className="w-9 h-9 rounded-none bg-emerald-50 dark:bg-white/5 border border-emerald-200 dark:border-white/10 flex items-center justify-center text-emerald-700 dark:text-slate-300 shrink-0 mt-0.5">

@@ -2,10 +2,29 @@ import { ServiceItem, ProjectItem, BeforeAfterItem, TestimonialItem, FaqItem } f
 
 export const COMPANY_CONFIG = {
   brandName: "Silver Shade Aluminium",
+  parentCompany: "Silver Shade Group & Architectural Contracting LLC",
   tagline: "Premium Aluminium & Glass Solutions in Abu Dhabi, Dubai & UAE",
   domain: "silvershadealuminium.com",
   location: "Musaffah, Abu Dhabi, UAE",
-  address: "Industrial Area, Musaffah, Abu Dhabi, United Arab Emirates",
+  address: "Plot 42, Sector M-14, Industrial Area, Musaffah, Abu Dhabi, United Arab Emirates",
+  physicalAddress: {
+    street: "Plot 42, Sector M-14, Musaffah Industrial Area",
+    city: "Abu Dhabi",
+    state: "Abu Dhabi Emirate",
+    postalCode: "00000",
+    country: "United Arab Emirates (UAE)",
+    full: "Plot 42, Sector M-14, Industrial Area, Musaffah, Abu Dhabi, UAE",
+    googleMapsUrl: "https://maps.google.com/?q=Musaffah+Industrial+Area+Abu+Dhabi"
+  },
+  mailingAddress: {
+    recipient: "Silver Shade Aluminium & Glass Works LLC",
+    department: "Attn: Architectural Estimations & Technical Contracts Division",
+    poBox: "P.O. Box 93214",
+    city: "Abu Dhabi",
+    country: "United Arab Emirates",
+    fullMailing: "Silver Shade Aluminium & Glass Works LLC, Attn: Technical Contracts Division, P.O. Box 93214, Abu Dhabi, United Arab Emirates",
+    courierDeliveryNote: "For courier shipments (DHL, FedEx, Aramex) or sample delivery, use Physical Plant Address: Plot 42, Sector M-14, Musaffah Industrial Area, Abu Dhabi, UAE. Contact: +971 52 335 2536"
+  },
   phone: "+971 52 335 2536",
   phoneSecondary: "+971 56 607 6460",
   phoneDisplay: "+971 52 335 2536 / +971 56 607 6460",
@@ -19,7 +38,244 @@ export const COMPANY_CONFIG = {
   email: "Silvershadesales@gmail.com",
   workingHours: "Monday – Saturday: 8:00 AM – 7:00 PM (GST)",
   establishedYear: 2026,
+  socialLinks: [
+    { name: "WhatsApp", url: "https://wa.me/971523352536", handle: "+971 52 335 2536" },
+    { name: "Instagram", url: "https://instagram.com/silvershadealuminium", handle: "@silvershadealuminium" },
+    { name: "Facebook", url: "https://facebook.com/silvershadealuminium", handle: "Silver Shade Aluminium UAE" },
+    { name: "LinkedIn", url: "https://linkedin.com/company/silver-shade-aluminium", handle: "Silver Shade Aluminium & Glass Works" },
+    { name: "YouTube", url: "https://youtube.com/@silvershadealuminium", handle: "Silver Shade Architectural Facades" },
+    { name: "TikTok", url: "https://tiktok.com/@silvershadealuminium", handle: "@silvershadealuminium" }
+  ]
 };
+
+export const PARENT_COMPANY_DETAILS = {
+  name: "Silver Shade Group & Architectural Contracting LLC",
+  arabicName: "مجموعة سيلفر شيد للمقاولات المعمارية ذ.م.م",
+  registrationNumber: "CN-1184920",
+  headquarters: "Abu Dhabi, United Arab Emirates",
+  foundedYear: "2010",
+  overview: "Silver Shade Group & Architectural Contracting LLC serves as the sovereign parent holding enterprise overseeing specialized building envelope, structural metal fabrication, civil majlis contracting, and high-performance architectural glazing operations across the GCC region.",
+  divisions: [
+    {
+      title: "Silver Shade Aluminium & Glass Works",
+      desc: "Custom architectural aluminium profiles, thermal-break facades, minimal slim sliding glass systems, and residential villa envelopes."
+    },
+    {
+      title: "Silver Shade Heritage & Majlis Civil Works",
+      desc: "Turnkey Tabuk blockwork majlis pavilions, authentic Spanish terracotta Qarmeed clay roof installations, and luxury gypsum interiors."
+    },
+    {
+      title: "Silver Shade Tensile & Steel Structures",
+      desc: "Authentic Kuwaiti winter steel sword arch tents, Mehler German PVC heat-welded roofs, and cantilever car parking canopies."
+    },
+    {
+      title: "Silver Shade Architectural Powder & Surface Finishing",
+      desc: "Qualicoat Class 2 architectural electrostatic powder coating and custom wood-grain sublimation lines in Musaffah."
+    }
+  ],
+  governance: "Regulated under UAE Federal Commercial Companies Law (Federal Decree-Law No. 32 of 2021) with licensed engineering practices recognized by the Abu Dhabi Department of Economic Development (ADDED)."
+};
+
+export const OUR_STORY_DATA = {
+  title: "The Silver Shade Journey",
+  arabicTitle: "قصتنا ورحلة التميز في عالم الألمنيوم والزجاج",
+  subtitle: "From a Dedicated Musaffah Metalcraft Workshop to UAE's Premier Architectural Facade Fabricator",
+  narrative: [
+    "Over 15 years ago, Silver Shade began in Musaffah with a single core philosophy: deliver architectural aluminium and glass without compromising on material thickness, structural integrity, or thermal performance in the unforgiving Arabian Gulf climate.",
+    "While many competitors resorted to thin gauge extrusions and generic rubber gaskets, Silver Shade invested in virgin 6063-T6 architectural alloys, European polyamide thermal barriers, and German double-mitering CNC saws. This steadfast commitment to heavy-gauge durability quickly earned the trust of prestigious Emirati homeowners and luxury villa contractors across Abu Dhabi and Dubai.",
+    "Today, operating from our state-of-the-art 12,000 sq ft manufacturing plant in Musaffah Sector M-14, we have completed over 850 luxury projects spanning royal majlis pavilions in Khalifa City, minimal panoramic glass villas in Palm Jumeirah and Dubai Hills, to iconic desert winter retreats in Al Ain and Liwa."
+  ],
+  milestones: [
+    { year: "2010", title: "Founding in Musaffah", desc: "Established first specialized workshop focusing on custom villa doors and acoustic glass." },
+    { year: "2014", title: "CNC Automation Upgrade", desc: "Integrated German automated double-head cutting and pneumatic crimping machinery." },
+    { year: "2018", title: "Estidama & Thermal-Break Leadership", desc: "Pioneered high-insulation thermal break sliding systems certified for UAE green codes." },
+    { year: "2021", title: "Majlis & Spanish Qarmeed Division", desc: "Launched full turnkey Tabuk civil construction and imported Spanish clay tile roofing." },
+    { year: "2024", title: "Kuwaiti Winter Tent Expansion", desc: "Mastered heavy steel sword-arch tensile winter tents with sliding glass envelopes." },
+    { year: "2026", title: "Smart Glass & Next-Gen Minimal Facades", desc: "Leading UAE market in motorized ultra-slim sliding systems and switchable PDLC glass." }
+  ]
+};
+
+export const WHO_WE_ARE_DATA = {
+  title: "Who We Are",
+  arabicTitle: "من نحن ورؤيتنا الهندسية",
+  tagline: "Master Engineers, Licensed Craftsmen & Structural Facade Specialists",
+  corePrinciples: [
+    {
+      icon: "Cpu",
+      title: "Engineering-First Mindset",
+      desc: "Every project begins with structural wind-load calculations, thermal barrier modeling, and CAD shop drawings."
+    },
+    {
+      icon: "ShieldCheck",
+      title: "Virgin 6063-T6 Alloys Only",
+      desc: "We strictly forbid recycled scrap aluminium. All extrusions utilize pure virgin billet alloys for maximum tensile yield."
+    },
+    {
+      icon: "Sparkles",
+      title: "Sub-Millimeter CNC Precision",
+      desc: "Automated German milling and hydraulic corner crimping guarantee leak-proof joints and whisper-quiet sliding tracks."
+    },
+    {
+      icon: "Award",
+      title: "15-Year Structural Integrity Warranty",
+      desc: "Direct manufacturer warranty covering profile structural stability, anodizing color fastness, and glass hermetic seals."
+    }
+  ]
+};
+
+export const TRUSTED_SOURCE_STATEMENT = {
+  badge: "Official Statement of Technical Authority",
+  arabicBadge: "بيان المرجعية الهندسية والاعتماد التقني",
+  title: "Trusted Source for UAE Building Codes & Architectural Specifications",
+  arabicTitle: "مرجع هندسي معتمد لمطابقة كود البناء والاستدامة في الإمارات",
+  statement: "Silver Shade Aluminium & Glass Works LLC operates as an authoritative engineering source and certified fabricator recognized across Abu Dhabi, Dubai, and the Northern Emirates. All technical data, profile cross-sections, thermal U-values, acoustic decibel ratings, and load calculations published on this platform are verified by licensed structural facade engineers in compliance with:",
+  compliancePoints: [
+    {
+      standard: "Abu Dhabi DMT & Estidama Pearl System",
+      desc: "Rigorous thermal transmittance compliance (U-value ≤ 1.7 W/m²K) ensuring sustainable cooling energy conservation."
+    },
+    {
+      standard: "Dubai Municipality (Al Sa'fat Green Building Regulations)",
+      desc: "Tested solar heat gain coefficient (SHGC ≤ 0.25) and airtightness sealing matching Dubai luxury residential requirements."
+    },
+    {
+      standard: "ASTM International Architectural Standards",
+      desc: "Tested under ASTM E283 (air leakage), ASTM E331 (water penetration resistance), and ASTM E330 (structural wind-load deflection)."
+    },
+    {
+      standard: "Qualicoat & Qualanod International Certifications",
+      desc: "Architectural electrostatic powder coating and marine-grade anodizing guaranteeing resistance to coastal salinity and UV radiation."
+    }
+  ],
+  engineerSeal: "Verified by Chief Structural Engineer Tariq Al-Mansoor (Estidama PQP / Member UAE Society of Engineers)"
+};
+
+export const WORKSPACE_PHOTOS_DATA = [
+  {
+    id: "cnc-cutting-bay",
+    title: "German CNC Double-Head Miter Cutting Bay",
+    arabicTitle: "خط قص وقص زوايا الألمنيوم بالتحكم الرقمي CNC",
+    category: "Fabrication Floor",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85",
+    desc: "Senior fabrication technicians operating high-precision double-mitering saws with 0.1mm tolerance for thermal-break profiles.",
+    location: "Musaffah Plant Sector M-14",
+    lead: "Eng. Sameer Al-Khatib"
+  },
+  {
+    id: "glass-tempering-crane",
+    title: "Heavy Vacuum Glass Lifting & Glazing Crane",
+    arabicTitle: "رافعة تفريغ الهواء لتركيب ألواح الزجاج العملاقة",
+    category: "Glazing Assembly",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85",
+    desc: "Suction-crane positioning of jumbo double-glazed acoustic laminated glass units (up to 4.2m height) for luxury villa sliding doors.",
+    location: "Musaffah Glazing Bay",
+    lead: "QA Inspector Farooq"
+  },
+  {
+    id: "steel-forge-sword",
+    title: "Kuwaiti Sword-Arch Steel Forging & TIG Welding",
+    arabicTitle: "ورشة تشكيل سيف الحديد ولحام هياكل الخيام الكويتي",
+    category: "Steel & Tent Workshop",
+    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=85",
+    desc: "Master metalcrafters forging structural sword arches and anti-corrosion zinc primer coatings for custom Kuwaiti winter tents.",
+    location: "Musaffah Heavy Metal Yard",
+    lead: "Master Bilal Al-Qureshi"
+  },
+  {
+    id: "laser-survey-site",
+    title: "3D Digital Point-Cloud Laser Surveying on Site",
+    arabicTitle: "المعاينة الرقمية ثلاثية الأبعاد بماسحات الليزر في الموقع",
+    category: "Site Engineering",
+    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1000&q=85",
+    desc: "Site survey engineers capturing sub-millimeter opening dimensions in luxury villa projects in Palm Jumeirah and Al Raha Beach.",
+    location: "Client Villa Sites (UAE)",
+    lead: "Eng. Rashid Zafar"
+  },
+  {
+    id: "majlis-tabuk-craft",
+    title: "Tabuk Blockwork & Spanish Qarmeed Assembly",
+    arabicTitle: "بناء جدران الطابوق المعزول وتركيب القرميد الإسباني",
+    category: "Majlis Construction",
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    desc: "Master masons aligning thermal rockwool insulated Tabuk masonry and interlocked authentic Spanish terracotta clay tiles.",
+    location: "VIP Majlis Projects (Abu Dhabi)",
+    lead: "Master Craftsman Khalid"
+  },
+  {
+    id: "qa-testing-lab",
+    title: "Acoustic Decibel & Water Chamber Testing Lab",
+    arabicTitle: "مختبر فحص العزل الصوتي واختبار مقاومة ضغط المياه",
+    category: "Quality Assurance",
+    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=85",
+    desc: "Calibrated hydrostatic spray racks and sound frequency generators verifying 42dB sound reduction and zero water ingress.",
+    location: "Musaffah QA Center",
+    lead: "Director Farooq Al-Nuaimi"
+  }
+];
+
+export const SOCIAL_PROOF_METRICS = {
+  googleRating: "4.9",
+  reviewsCount: "240+",
+  villasCompleted: "850+",
+  yearsInUAE: "15+",
+  onTimeDeliveryRate: "100%",
+  warrantyYears: "15 Years",
+  topClientCommunities: [
+    "Emirates Hills, Dubai",
+    "Palm Jumeirah, Dubai",
+    "Dubai Hills Estate",
+    "Al Raha Beach, Abu Dhabi",
+    "Saadiyat Cultural District",
+    "Khalifa City & MBZ City",
+    "Yas Acres, Abu Dhabi",
+    "Jumeirah Golf Estates"
+  ]
+};
+
+export const FEATURED_WEBSITES_DATA = [
+  {
+    name: "Abu Dhabi Department of Municipalities and Transport (DMT)",
+    arabicName: "دائرة البلديات والنقل - أبوظبي",
+    category: "Government Regulatory Authority",
+    url: "https://www.dmt.gov.ae",
+    desc: "Official building codes, permits, and urban planning compliance framework in Abu Dhabi Emirate."
+  },
+  {
+    name: "Dubai Municipality - Al Sa'fat Green Building System",
+    arabicName: "بلدية دبي - نظام السعفات للمباني الخضراء",
+    category: "Municipal Green Building Authority",
+    url: "https://www.dm.gov.ae",
+    desc: "Sustainable envelope thermal insulation and solar heat gain coefficient benchmarks in Dubai."
+  },
+  {
+    name: "Abu Dhabi Estidama Pearl Building Rating System (PBRS)",
+    arabicName: "برنامج استدامة - تقييم اللؤلؤ للمباني",
+    category: "Sustainability Standard",
+    url: "https://www.dmt.gov.ae/en/Urban-Planning/Estidama",
+    desc: "Mandatory UAE sustainability framework governing building envelope thermal performance."
+  },
+  {
+    name: "ASTM International - Glass & Aluminium Standards",
+    arabicName: "الجمعية الأمريكية للاختبار والمواد (ASTM)",
+    category: "International Testing Standard",
+    url: "https://www.astm.org",
+    desc: "Global test methods for ASTM E283 air leakage, E330 structural wind loads, and E331 water penetration."
+  },
+  {
+    name: "UAE Society of Engineers (SOE UAE)",
+    arabicName: "جمعية المهندسين - دولة الإمارات العربية المتحدة",
+    category: "Engineering Body",
+    url: "https://www.soeuae.ae",
+    desc: "National professional engineering accreditation and facade technical best practice guidelines."
+  },
+  {
+    name: "Qualicoat International Architectural Powder Coating",
+    arabicName: "منظمة كواليكوت العالمية لطلاء الألمنيوم",
+    category: "Surface Finishing Standard",
+    url: "https://www.qualicoat.net",
+    desc: "International quality label for architectural powder coatings resisting coastal marine salinity and UV."
+  }
+];
 
 export const ALUMINIUM_SYSTEM_OPTIONS = [
   {
