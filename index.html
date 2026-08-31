@@ -54,34 +54,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Comprehensive Structured Data (Schema.org) for Google Knowledge Graph & Local SEO -->
+    <!-- Comprehensive Structured Data (Schema.org) for Google Knowledge Graph, Sitelinks & Local SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "HomeAndConstructionBusiness",
+          "@type": ["Organization", "LocalBusiness", "GeneralContractor", "HomeAndConstructionBusiness"],
           "@id": "https://silvershadealuminium.com/#organization",
           "name": "Silver Shade Aluminium & Glass Works LLC",
+          "legalName": "Silver Shade Aluminium & Glass Works L.L.C",
           "alternateName": [
             "Silver Shade Aluminium",
-            "شركة سيلفر شيد لأعمال الألمنيوم والزجاج",
+            "سيلفر شيد لأعمال الألمنيوم والزجاج والخيام",
             "Silver Shade Aluminium Abu Dhabi",
             "Silver Shade Aluminium Dubai"
           ],
           "url": "https://silvershadealuminium.com",
-          "logo": "https://silvershadealuminium.com/logo.png",
-          "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
-          "description": "Leading architectural aluminium and glass contractor in Abu Dhabi and Dubai. Specialized in Tabuk Majlis (مجلس طابوق وقرميد), Spanish Qarmeed tile roofs, 10cm/10.5cm profile sliding doors, curtain wall facades, frameless glass partitions, glass balustrades, and aluminium kitchen cabinets across the UAE.",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://silvershadealuminium.com/#logo",
+            "url": "https://silvershadealuminium.com/favicon.svg",
+            "contentUrl": "https://silvershadealuminium.com/favicon.svg",
+            "caption": "Silver Shade Aluminium & Glass Works Logo",
+            "width": "512",
+            "height": "512"
+          },
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+            "caption": "Silver Shade Architectural Aluminium & Glass Projects UAE"
+          },
+          "description": "Leading architectural aluminium, glass, and steel contractor in Abu Dhabi and Dubai, UAE. Specialized in custom Kuwaiti style winter tents (خيمة شتاء كويتي), Tabuk Majlis with Spanish Qarmeed clay tile roofs (مجلس طابوق وقرميد), 10cm/10.37cm/10.5cm profile sliding & hinge doors, architectural awning & panoramic windows, curtain wall facades, frameless glass railings, and modern aluminium kitchen cabinets.",
           "telephone": "+971523352536",
           "email": "Silvershadesales@gmail.com",
           "priceRange": "AED",
           "currenciesAccepted": "AED",
           "paymentAccepted": "Cash, Credit Card, Bank Transfer, Cheque",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+971523352536",
+              "contactType": "customer service",
+              "areaServed": "AE",
+              "availableLanguage": ["English", "Arabic", "Urdu", "Hindi"]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+971523352536",
+              "contactType": "sales",
+              "areaServed": "AE",
+              "availableLanguage": ["English", "Arabic", "Urdu", "Hindi"]
+            }
+          ],
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
               "opens": "08:00",
               "closes": "19:00"
             }
@@ -107,25 +143,36 @@
             { "@type": "City", "name": "Sharjah" },
             { "@type": "City", "name": "Ajman" },
             { "@type": "City", "name": "Ras Al Khaimah" },
+            { "@type": "City", "name": "Fujairah" },
             { "@type": "Country", "name": "United Arab Emirates" }
+          ],
+          "knowsAbout": [
+            "Kuwaiti Winter Steel & Glass Tents (خيمة شتاء كويتي)",
+            "Tabuk Majlis Construction (مجلس طابوق وقرميد)",
+            "Spanish Terracotta Qarmeed Tile Roofs",
+            "10cm, 10.37cm & 10.5cm Heavy Aluminium Doors",
+            "Awning, Tilt-and-Turn & Sliding Aluminium Windows",
+            "Curtain Wall 10/5 & 8/5 Glass Facades",
+            "Frameless Glass Balustrades & Stainless Steel Railings",
+            "Moisture-Proof Aluminium Kitchen Cabinets with Glass Shutters"
           ],
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "128",
+            "reviewCount": "142",
             "bestRating": "5",
             "worstRating": "1"
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Aluminium, Glass & Majlis Architectural Services",
+            "name": "Aluminium, Glass & Majlis Architectural Services Catalog",
             "itemListElement": [
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
                   "name": "Kuwaiti Style Winter Steel & Glass Tents (خيمة شتاء سيف حديد شكل كويتي)",
-                  "description": "Custom winter luxury tents engineered with heavy steel sword arches, German PVC thermal canvas roofs, traditional scalloped valance fringe, and panoramic 10cm sliding glass doors."
+                  "description": "Custom winter luxury tents engineered with heavy steel sword arches, German PVC thermal canvas roofs, traditional scalloped valance fringe, and panoramic 10cm sliding glass doors across UAE."
                 }
               },
               {
@@ -142,6 +189,14 @@
                   "@type": "Service",
                   "name": "10cm, 10.37cm & 10.5cm Aluminium Profile Sliding & Hinge Doors",
                   "description": "Heavy-duty 6063-T6 architectural aluminium single and double leaf hinged and sliding doors with 24mm acoustic double glazed Low-E units."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Architectural Windows Systems (Wood-Grain, Sliding, Awning, Fixed Grid)",
+                  "description": "Premium thermal-break aluminium awning, sliding transoms, and grid panoramic window systems engineered for UAE high wind loads and dust sealing."
                 }
               },
               {
@@ -172,6 +227,221 @@
           }
         },
         {
+          "@type": "WebSite",
+          "@id": "https://silvershadealuminium.com/#website",
+          "url": "https://silvershadealuminium.com",
+          "name": "Silver Shade Aluminium & Glass UAE",
+          "alternateName": [
+            "Silver Shade Aluminium",
+            "سيلفر شيد لأعمال الألمنيوم والزجاج والخيام والمجالس",
+            "Silver Shade Aluminium & Glass Works"
+          ],
+          "description": "Official portal of Silver Shade Aluminium & Glass Works LLC UAE. Premier manufacturer and installer of Kuwaiti winter tents, Tabuk Majlis with Spanish Qarmeed, luxury architectural aluminium windows, 10cm profile sliding doors, curtain wall glass facades, and glass railings across Abu Dhabi and Dubai.",
+          "publisher": {
+            "@id": "https://silvershadealuminium.com/#organization"
+          },
+          "inLanguage": [
+            "en",
+            "ar",
+            "ur",
+            "hi",
+            "ru",
+            "fr",
+            "zh-CN",
+            "fa",
+            "tl",
+            "de",
+            "it",
+            "es",
+            "tr",
+            "bn",
+            "ml",
+            "ta",
+            "pa",
+            "id"
+          ],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://silvershadealuminium.com/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://silvershadealuminium.com/#breadcrumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://silvershadealuminium.com/#home"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://silvershadealuminium.com/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Windows Systems",
+              "item": "https://silvershadealuminium.com/#windows-showcase"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Doors Systems",
+              "item": "https://silvershadealuminium.com/#doors-showcase"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Tabuk Majlis (مجلس طابوق)",
+              "item": "https://silvershadealuminium.com/#majlis-showcase"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Kuwaiti Tents (خيام كويتي)",
+              "item": "https://silvershadealuminium.com/#kuwaiti-tent-showcase"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Kitchen Cabinets",
+              "item": "https://silvershadealuminium.com/#kitchen-showcase"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Glass Railings",
+              "item": "https://silvershadealuminium.com/#railings-showcase"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "Projects",
+              "item": "https://silvershadealuminium.com/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "Contact & Estimate",
+              "item": "https://silvershadealuminium.com/#contact"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://silvershadealuminium.com/#site-navigation",
+          "name": "Site Navigation Menu",
+          "description": "Primary architectural navigation and service sections for Silver Shade Aluminium & Glass Works LLC",
+          "itemListElement": [
+            {
+              "@type": "SiteNavigationElement",
+              "position": 1,
+              "name": "Home",
+              "description": "Silver Shade Aluminium & Glass official homepage and UAE overview",
+              "url": "https://silvershadealuminium.com/#home"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 2,
+              "name": "About Us",
+              "description": "15+ years of precision architectural engineering, German tooling, and UAE fabrication workshop",
+              "url": "https://silvershadealuminium.com/#about"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 3,
+              "name": "Our Services",
+              "description": "Full turnkey architectural aluminium, glass, majlis, tents, and facades solutions",
+              "url": "https://silvershadealuminium.com/#services"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 4,
+              "name": "Windows Systems (نوافذ ألمنيوم)",
+              "description": "Wood-grain awning windows, sliding transoms, fixed panoramic glass, and exhaust units",
+              "url": "https://silvershadealuminium.com/#windows-showcase"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 5,
+              "name": "Doors Systems (أبواب ألمنيوم)",
+              "description": "10cm, 10.37cm & 10.5cm heavy aluminium profiles for single/double hinge & sliding glass doors",
+              "url": "https://silvershadealuminium.com/#doors-showcase"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 6,
+              "name": "Tabuk Majlis & Qarmeed Roofs (مجلس طابوق وقرميد)",
+              "description": "Custom luxury villa majlis built with insulated Tabuk blockwork, Spanish clay tiles, and panoramic glass",
+              "url": "https://silvershadealuminium.com/#majlis-showcase"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 7,
+              "name": "Kuwaiti Style Winter Tents (خيام شتاء كويتي)",
+              "description": "Traditional steel sword arch tents with German PVC thermal roof and sliding glass facades",
+              "url": "https://silvershadealuminium.com/#kuwaiti-tent-showcase"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 8,
+              "name": "Aluminium Kitchen Cabinets (مطابخ ألمنيوم)",
+              "description": "Termite-proof, heat-proof aluminium kitchens with single & double piece tempered glass shutters",
+              "url": "https://silvershadealuminium.com/#kitchen-showcase"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 9,
+              "name": "Glass Railings & Balustrades (درابزين زجاج)",
+              "description": "Frameless 12-17.52mm tempered glass balustrades with SS316 spigots and continuous base shoes",
+              "url": "https://silvershadealuminium.com/#railings-showcase"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 10,
+              "name": "Portfolio & Completed Projects",
+              "description": "Photo gallery and case studies of luxury villas, majlis lounges, and commercial projects across UAE",
+              "url": "https://silvershadealuminium.com/#projects"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 11,
+              "name": "Why Choose Us",
+              "description": "15-year warranty, Estidama compliance, precision CNC mitering, and thermal break engineering",
+              "url": "https://silvershadealuminium.com/#why-us"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 12,
+              "name": "Frequently Asked Questions (FAQ)",
+              "description": "Detailed answers on Qarmeed roof insulation, aluminium profile thicknesses, and municipal approvals",
+              "url": "https://silvershadealuminium.com/#faq"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 13,
+              "name": "Contact & Free Site Measurement",
+              "description": "Musaffah workshop location, direct WhatsApp chat, telephone hotline, and quote calculator",
+              "url": "https://silvershadealuminium.com/#contact"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 14,
+              "name": "HTML Sitemap Directory",
+              "description": "Complete indexed directory of all architectural services, systems, and UAE service areas",
+              "url": "https://silvershadealuminium.com/#html-sitemap"
+            }
+          ]
+        },
+        {
           "@type": "FAQPage",
           "@id": "https://silvershadealuminium.com/#faq",
           "mainEntity": [
@@ -193,10 +463,18 @@
             },
             {
               "@type": "Question",
+              "name": "What are Kuwaiti Style Winter Tents (خيمة شتاء سيف حديد شكل كويتي)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kuwaiti style winter tents feature heavy-gauge curved steel sword arches ('Sayf'), multi-layer German PVC thermal waterproof canopy with traditional scalloped valance fringe, and panoramic 10cm profile sliding glass walls with integrated air-conditioning ports."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "Do you provide free on-site measurements and quotations across Abu Dhabi and Dubai?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, Silver Shade Aluminium offers free site surveys with precision laser measurements, CAD shop drawings, and comprehensive itemized quotations across Abu Dhabi, Dubai, Al Ain, and Northern Emirates."
+                "text": "Yes, Silver Shade Aluminium offers free site surveys with precision laser measurements, CAD shop drawings, and comprehensive itemized quotations across Abu Dhabi, Dubai, Al Ain, Sharjah, and Northern Emirates."
               }
             },
             {
@@ -205,6 +483,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "All our 6063-T6 aluminium profiles, tempered safety glass, EPDM gaskets, and stainless steel hardware adhere to UAE municipal regulations, Estidama sustainability standards, and international ASTM/BS specifications."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why choose aluminium kitchen cabinets over wood in the UAE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Aluminium cabinets are 100% moisture-proof, fire-resistant, and immune to termites, warping, or swelling caused by UAE humidity, while offering luxury tempered glass shutters in fluted, tinted, and frosted styles."
               }
             }
           ]
