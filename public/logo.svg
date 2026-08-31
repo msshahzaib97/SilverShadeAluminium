@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 180" fill="none">
+  <defs>
+    <radialGradient id="bgGradFull" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0c1813" />
+      <stop offset="100%" stop-color="#040806" />
+    </radialGradient>
+    <linearGradient id="emGradFull" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="slvGradFull" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="goldGradFull" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+
+  <!-- Logo Emblem Icon -->
+  <g transform="translate(10, 10)">
+    <rect x="0" y="0" width="160" height="160" rx="32" fill="url(#bgGradFull)" stroke="url(#emGradFull)" stroke-width="4" />
+    
+    <!-- Architectural 'S' Structure -->
+    <path d="M120 50 C120 32 105 25 80 25 C55 25 40 38 40 58 C40 80 65 88 90 95 C115 102 125 112 125 128 C125 148 105 158 80 158 C50 158 35 145 35 125" 
+          stroke="url(#slvGradFull)" 
+          stroke-width="14" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+          
+    <path d="M112 50 C112 36 100 32 80 32 C60 32 48 42 48 58 C48 76 70 84 95 91 C120 98 132 110 132 128 C132 144 112 152 80 152 C55 152 42 140 42 125" 
+          stroke="url(#emGradFull)" 
+          stroke-width="7" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <polygon points="80,72 92,82 80,92 68,82" fill="url(#goldGradFull)" stroke="#ffffff" stroke-width="1" />
+  </g>
+
+  <!-- Brand Typography Lockup -->
+  <!-- Main Title -->
+  <text x="195" y="72" font-family="'Manrope', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="38" font-weight="800" letter-spacing="0.08em" fill="#ffffff">
+    SILVER SHADE
+  </text>
+
+  <!-- Subtitle (English) -->
+  <text x="198" y="105" font-family="'Manrope', system-ui, sans-serif" font-size="14" font-weight="700" letter-spacing="0.42em" fill="#34d399">
+    ALUMINIUM &amp; GLASS WORKS
+  </text>
+
+  <!-- Arabic Tagline -->
+  <text x="198" y="138" font-family="'Cairo', 'Tajawal', system-ui, sans-serif" font-size="15" font-weight="600" fill="#94a3b8" letter-spacing="0.05em">
+    سيلفر شيد لأعمال الألمنيوم والزجاج والخيام
+  </text>
+
+  <!-- UAE Verification Badge Indicator -->
+  <g transform="translate(610, 35)">
+    <circle cx="20" cy="20" r="18" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1.5" />
+    <path d="M12 20 L18 26 L28 14" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

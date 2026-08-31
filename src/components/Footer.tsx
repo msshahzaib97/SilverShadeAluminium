@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, MapPin, Phone, Mail, MessageCircle, X, Globe } from 'lucide-react';
 import { COMPANY_CONFIG } from '../data/content';
 import { useLanguage } from '../context/LanguageContext';
+import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
   onOpenQuoteModal: (service?: string) => void;
@@ -53,18 +54,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             
             {/* Brand Column */}
             <div className="lg:col-span-4 space-y-4">
-              <a href="#home" className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-none border border-emerald-500/40 bg-emerald-950/40 flex items-center justify-center">
-                  <span className="text-xs font-bold text-emerald-400 tracking-widest">S</span>
-                </div>
-                <div>
-                  <span className="text-sm font-semibold tracking-[0.2em] text-white uppercase block">
-                    SILVER SHADE
-                  </span>
-                  <span className="text-[9px] tracking-[0.3em] text-emerald-400 uppercase font-medium">
-                    ALUMINIUM • ABU DHABI &amp; DUBAI
-                  </span>
-                </div>
+              <a href="#home" aria-label="Silver Shade Aluminium - Back to Top">
+                <BrandLogo size="md" showArabic />
               </a>
 
               <p className="text-xs text-slate-400 max-w-sm leading-relaxed font-normal">

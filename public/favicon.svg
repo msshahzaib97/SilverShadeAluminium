@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Rich Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#0c1813" />
+      <stop offset="100%" stop-color="#040806" />
+    </radialGradient>
+
+    <!-- Emerald Glow Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- Platinum Silver Metallic Gradient -->
+    <linearGradient id="silverGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748b" />
+      <stop offset="25%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <!-- Deep Emerald Shadow Gradient -->
+    <linearGradient id="deepEmerald" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+
+    <!-- Architectural Glass Facet Gradient -->
+    <linearGradient id="glassFacet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#059669" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Gold Accent Line Gradient -->
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Rounded Square Frame with Glass-Morphism Border -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="url(#bgGrad)" stroke="url(#emeraldGrad)" stroke-width="8" />
+  
+  <!-- Subtle Internal Architectural Grid Overlay -->
+  <path d="M16 256 H496 M256 16 V496" stroke="#10b981" stroke-opacity="0.08" stroke-width="2" stroke-dasharray="8 8" />
+  <circle cx="256" cy="256" r="180" stroke="#10b981" stroke-opacity="0.06" stroke-width="2" />
+
+  <!-- Inner Architectural Diamond / Facet Shield -->
+  <g transform="translate(0, 0)">
+    <!-- Top Arc of Architectural S (Extruded Aluminium Profile) -->
+    <path d="M370 155 C370 105 320 85 256 85 C185 85 140 120 140 175 C140 235 205 255 275 275 C345 295 372 320 372 365 C372 420 320 445 256 445 C180 445 135 410 135 355" 
+          stroke="url(#silverGrad)" 
+          stroke-width="36" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          filter="url(#glow)" />
+
+    <!-- Overlapping Emerald Glass Ribbon Line -->
+    <path d="M350 155 C350 115 310 100 256 100 C195 100 158 130 158 175 C158 225 215 245 285 265 C355 285 390 315 390 365 C390 410 345 430 256 430 C190 430 152 400 152 355" 
+          stroke="url(#emeraldGrad)" 
+          stroke-width="18" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Architectural Triangular Glass Prism / Facet Highlights -->
+    <polygon points="256,120 320,180 256,210 200,160" fill="url(#glassFacet)" stroke="url(#silverGrad)" stroke-width="3" opacity="0.85" />
+    <polygon points="256,300 315,350 256,395 195,340" fill="url(#glassFacet)" stroke="url(#emeraldGrad)" stroke-width="3" opacity="0.85" />
+
+    <!-- Center Precision Diamond Core -->
+    <polygon points="256,230 285,256 256,282 227,256" fill="url(#goldAccent)" stroke="#ffffff" stroke-width="2" />
+  </g>
+
+  <!-- Metallic Corner Rivets/Accents (Representing Precision Aluminium Joinery) -->
+  <circle cx="64" cy="64" r="6" fill="#10b981" />
+  <circle cx="448" cy="64" r="6" fill="#10b981" />
+  <circle cx="64" cy="448" r="6" fill="#10b981" />
+  <circle cx="448" cy="448" r="6" fill="#10b981" />
+</svg>

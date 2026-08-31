@@ -4,6 +4,7 @@ import { Menu, X, ArrowUpRight, MessageCircle, Globe } from 'lucide-react';
 import { COMPANY_CONFIG } from '../data/content';
 import { useLanguage } from '../context/LanguageContext';
 import { LanguageDropdown } from './LanguageDropdown';
+import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
   onOpenQuoteModal: (service?: string) => void;
@@ -62,23 +63,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
-          {/* Logo */}
+          {/* Brand Logo */}
           <a
             href="#home"
             id="brand-logo-link"
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center group focus:outline-none"
+            aria-label="Silver Shade Aluminium & Glass - Home"
           >
-            <div className="w-9 h-9 border border-emerald-400/30 bg-emerald-950/40 backdrop-blur-md flex items-center justify-center relative overflow-hidden group-hover:border-emerald-500 group-hover:bg-emerald-500/10 transition-all shadow-sm">
-              <span className="text-xs font-bold tracking-widest text-emerald-300">S</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-2xl font-bold tracking-tighter text-white group-hover:text-emerald-400 transition-colors">
-                SILVER SHADE
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.35em] text-emerald-400 uppercase -mt-1 font-semibold">
-                Aluminium &amp; Glass
-              </span>
-            </div>
+            <BrandLogo size="md" />
           </a>
 
           {/* Desktop Navigation Links */}
